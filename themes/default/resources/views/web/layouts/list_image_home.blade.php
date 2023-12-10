@@ -1,0 +1,20 @@
+@if(isset($setting_home['activity']['image']) && count($setting_home['activity']['image']) > 0)
+<section id="activity">
+    <div class="container">
+        <h2 class="section-title activity-title">{{ $title ?? 'Hoạt động tại Lê ánh' }}</h2>
+        <div class="activity-list  col-gird-6">
+            @foreach ($setting_home['activity']['image'] as $key => $image)
+            <div class="activity-item item" data-thumnail="">
+                @include('Default::general.components.image', [
+                    'src' => resizeWImage($image, 'w600'),
+                    'width' => '570px',
+                    'height' => '315px',
+                    'lazy'   => true,
+                    'title'  =>  getAlt($image ?? '')
+                ])
+            </div>
+            @endforeach
+        </div>
+    </div>
+</section>
+@endif

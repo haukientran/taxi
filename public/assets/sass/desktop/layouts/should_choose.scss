@@ -1,0 +1,19 @@
+#should-choose {
+    margin-top: 8px;
+    padding-top: 34px;
+    padding-bottom: 32px;
+    background-color: #EFF5F5;
+   .should-choose {
+        &-container {
+            margin: 0 auto;
+            max-width: 996px;
+        }
+        &-title {
+            margin-bottom: 50px;
+            @include webkit-box(2);
+        }
+        &-list {
+            gap: 44px 68px;
+        }
+    }
+}

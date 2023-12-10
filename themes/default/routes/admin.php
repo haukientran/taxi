@@ -14,8 +14,18 @@ App::booted(function() {
 			Route::match(['GET', 'POST'], 'contact', 'SettingController@contact')->name('contact');
 			// Cấu hình trang chủ
 			Route::match(['GET', 'POST'], 'home', 'SettingController@home')->name('home');
-			// Cấu hình tổng quan
+            // Cấu hình trang giới thiệu
+			Route::match(['GET', 'POST'], 'introduce', 'SettingController@introduce')->name('introduce');
+            // Cấu hình tin tức
+            Route::match(['GET', 'POST'], 'post_category', 'SettingController@post_category')->name('post_category');
+            // Cấu hình du học
+            Route::match(['GET', 'POST'], 'study_abroad_category', 'SettingController@study_abroad_category')->name('study_abroad_category');
+            // Cấu hình trang tìm kiếm trường
+            Route::match(['GET', 'POST'], 'search_school', 'SettingController@search_school')->name('search_school');
+            // Cấu hình tổng quan
 			Route::match(['GET', 'POST'], 'overview', 'SettingController@overview')->name('overview');
+
+			Route::match(['GET', 'POST'], 'personnel', 'SettingController@personnel')->name('personnel');
 			// Cấu hình email
 			Route::match(['GET', 'POST'], 'email', 'SettingController@email')->name('email');
 			// Cấu hình mã chuyển đổi

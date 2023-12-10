@@ -1,0 +1,92 @@
+@import '../components/mixin.scss';
+@import '../components/ckeditor.scss';
+.filter {
+    &-banner {
+        padding: 50px 0 60px;
+    }
+    &-list {
+        width: 100%;
+        margin: 0 auto;
+        &__select {
+            width: 100%;
+            &:last-child {
+                margin-bottom: 0px;
+                margin-top: 20px;
+            }
+        }
+        &__search {
+            display: flex;
+            align-items: flex-end;
+        }
+    }
+    &-select {
+        height: 40px;
+        font-size: 14px;
+        border-radius: 30px;
+        padding: 5px;
+    }
+    &-search {
+        display: inline-block;
+        height: 40px;
+        width: 100%;
+        background-color: #ea170d;
+        text-align: center;
+        border-radius: 30px;
+        cursor: pointer;
+    }
+}
+.school {
+    padding: 30px 0;
+    &-title {
+        h1 {
+            color: $color_main;
+            border-bottom: 1px solid $color_main;
+        }
+    }
+    .color_blue {
+        color: #23527c;
+    }
+    &-list {
+        padding: 20px 0;
+        &__item {
+            width: 100%;
+            padding: 5px;
+            border-radius: 10px;
+            margin-top: 15px;
+            border: 2px solid $color_border;
+            .thumbnail {
+                width: 32%;
+                margin-right: 10px;
+                padding: 5px;
+                position: relative;
+                border-right: 1px solid $color_main;
+                .label {
+                    top: 0;
+                    left: -20px;
+                    border-radius: 15px;
+                    padding: 5px;
+                    background-color: $color_main;
+                    position: absolute;
+                }
+            }
+            .content {
+                width: calc(68% - 10px);
+                position: relative;
+                &-title {
+                    color: #23527c;
+                    margin-bottom: -15px;
+                    @include webkit-box(3);
+                }
+                .btn {
+                    position: absolute;
+                    right: 0;
+                    bottom: 0;
+                    padding: 0px 10px;
+                    svg {
+                        margin-bottom: -2px;
+                    }
+                }
+            }
+        }
+    }
+}

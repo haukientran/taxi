@@ -89,7 +89,7 @@ $padding: 15px;
 /* dùng xl cho màn điện thoại có kích thước lớn hơn 1200px */
 @media only screen and (min-width: 1200px) {
 	.container {
-		max-width: 1200px;
+		max-width: 1230px;
 	}
 	@for $i from 1 through 12 {
 		.col-xl-#{$i} {

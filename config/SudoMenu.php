@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 return [
 	'menu' => [
@@ -28,8 +28,6 @@ return [
 	        	'sync_links_create',
 	        	'admin_users_create',
 	        	'admin_users_index',
-	        	'products_create',
-	        	'product_categories_index',
 	        	'attributes_index',
 	        	'brands_index',
 	        	'orders_index',
@@ -40,66 +38,6 @@ return [
 	        	'contacts_index',
 	        	'email_registers_index',
 	        	'call_me_backs_index',
-	        ]
-	    ],
-	    [
-	    	'type' 				=> 'multiple',
-	        'name' 				=> 'Ecommerce',
-	        'icon' 				=> 'bx bx-store',
-	        'childs' => [
-	            [
-	                'name' 		=> 'Sản phẩm',
-	                'route' 	=> 'admin.products.index',
-	                'role' 		=> 'products_create',
-	                'active'    => ['admin.products.edit', 'admin.products.create']
-	            ],
-	            [
-	                'name' 		=> 'Danh mục sản phẩm',
-	                'route' 	=> 'admin.product_categories.index',
-	                'role' 		=> 'product_categories_index',
-	                'active'    => ['admin.product_categories.edit', 'admin.product_categories.create']
-	            ],
-				[
-					'name' 		=> 'Bộ lọc',
-					'route' 	=> 'admin.filters.index',
-					'role' 		=> 'filters_index',
-					'active' 	=> [ 'admin.filters.create', 'admin.filters.show', 'admin.filters.edit' ]
-				],
-	            [
-	                'name' 		=> 'Thuộc tính sản phẩm',
-	                'route' 	=> 'admin.attributes.index',
-	                'role' 		=> 'attributes_index',
-	                'active'    => ['admin.attributes.edit', 'admin.attributes.create']
-	            ],
-	            [
-	                'name' 		=> 'Thương hiệu',
-	                'route' 	=> 'admin.brands.index',
-	                'role' 		=> 'brands_index',
-	                'active'    => ['admin.brands.edit', 'admin.brands.create']
-	            ],
-	            [
-	                'name' 		=> 'Đơn hàng',
-	                'route' 	=> 'admin.orders.index',
-	                'role' 		=> 'orders_index',
-	                'active'    => ['admin.orders.edit', 'admin.orders.create', 'admin.orders.show']
-	            ],
-	            [
-	                'name' 		=> 'Khách hàng',
-	                'route' 	=> 'admin.customers.index',
-	                'role' 		=> 'customers_index',
-	                'active'    => ['admin.customers.edit', 'admin.customers.create']
-	            ],
-	            [
-	                'name' 		=> 'Vận chuyển',
-	                'route' 	=> 'admin.shippings.create',
-	                'role' 		=> 'shippings_create',
-	            ],
-	            [
-	                'name' 		=> 'Thuế',
-	                'route' 	=> 'admin.taxes.index',
-	                'role' 		=> 'taxes_index',
-	                'active'    => ['admin.taxes.edit', 'admin.taxes.create']
-	            ]
 	        ]
 	    ],
 	    [
@@ -120,12 +58,36 @@ return [
 	            ],
 	            [
 	                'name' 		=> 'Danh mục',
-	                'route' 	=> 'admin.post_categories.create',
+	                'route' 	=> 'admin.post_categories.index',
 	                'role' 		=> 'post_categories_index',
 	                'active'    => ['admin.post_categories.edit', 'admin.post_categories.index']
 	            ]
 	        ]
 	    ],
+        // [
+	    // 	'type' 				=> 'multiple',
+	    //     'name' 				=> 'Bài viết',
+	    //     'icon' 				=> 'bx bx-detail',
+	    //     'childs' => [
+	    //         [
+	    //             'name' 		=> 'Thêm mới',
+	    //             'route' 	=> 'admin.posts.create',
+	    //             'role' 		=> 'posts_create'
+	    //         ],
+	    //         [
+	    //             'name' 		=> 'Danh sách',
+	    //             'route' 	=> 'admin.posts.index',
+	    //             'role' 		=> 'posts_index',
+	    //             'active'    => ['admin.posts.edit' ]
+	    //         ],
+	    //         [
+	    //             'name' 		=> 'Danh mục',
+	    //             'route' 	=> 'admin.post_categories.create',
+	    //             'role' 		=> 'post_categories_index',
+	    //             'active'    => ['admin.post_categories.edit', 'admin.post_categories.index']
+	    //         ]
+	    //     ]
+	    // ],
 	    [
 	    	'type' 		=> 'single',
 			'name' 		=> 'Trang đơn',
@@ -133,14 +95,6 @@ return [
 			'route' 	=> 'admin.pages.index',
 			'role'		=> 'pages_index',
 			'active'    => [ 'admin.pages.create', 'admin.pages.edit' ]
-		],
-		[
-	    	'type' 		=> 'single',
-			'name' 		=> 'Tags',
-			'icon' 		=> 'bx bx-purchase-tag',
-			'route' 	=> 'admin.tags.create',
-			'role'		=> 'tags_index',
-			'active'    => [ 'admin.tags.create', 'admin.tags.edit' ]
 		],
 		[
 	    	'type' 		=> 'single',
@@ -216,6 +170,9 @@ return [
 	        	'settings_home',
 	        	'settings_contact',
 	        	'settings_overview',
+	        	'settings_post_category',
+	        	'settings_introduce',
+	        	'settings_personnel',
 	        	'settings_googleAuthenticate',
 	        ]
 	    ],
@@ -238,6 +195,21 @@ return [
 	                'name' 		=> 'Trang chủ',
 	                'route' 	=> 'admin.settings.home',
 	                'role' 		=> 'settings_home'
+	            ],
+                [
+	                'name' 		=> 'Tin tức',
+	                'route' 	=> 'admin.settings.post_category',
+	                'role' 		=> 'settings_post_category'
+	            ],
+                [
+	                'name' 		=> 'Giới thiệu',
+	                'route' 	=> 'admin.settings.introduce',
+	                'role' 		=> 'settings_introduce'
+	            ],
+				[
+	                'name' 		=> 'Nhân sự',
+	                'route' 	=> 'admin.settings.personnel',
+	                'role' 		=> 'settings_personnel'
 	            ],
 	            [
 	                'name' 		=> 'Liên hệ',

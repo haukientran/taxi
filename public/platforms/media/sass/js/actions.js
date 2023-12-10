@@ -6,7 +6,7 @@ uploads = getUrlParameter(url,'uploads');
 $(document).ready(function() {
 	// Load ảnh khi mới tải trang
 	loadImageLoading(url);
-	
+
 	// click vào 1 box item ảnh
 	$('body').on('click','.media-content__main-list .item',function() {
 		if ($(this).hasClass('upload_waiting')) return false;
@@ -189,7 +189,7 @@ $(document).ready(function() {
 		field_id = getUrlParameter(url,'field_id');
 		switch(type) {
 			// Chỉ thay đổi src của thẻ ảnh
-			case 'direct': 
+			case 'direct':
 				$('.item.active').each(function(index) {
 					name = $(this).data('name');
 					url_file = $(this).data('url');
@@ -200,7 +200,7 @@ $(document).ready(function() {
 				});
 			break;
 			// Up 1 ảnh
-			case 'single': 
+			case 'single':
 				$('.item.active').each(function(index) {
 					name = $(this).data('name');
 					url_file = $(this).data('url');
@@ -224,12 +224,12 @@ $(document).ready(function() {
 				});
 			break;
 			// Up ảnh vào tinyMCE
-			case 'editor': 
+			case 'editor':
 				$('.item.active').each(function(index) {
 					image = $(this).data('image');
 					title = $(this).data('title');
 					caption = $(this).data('caption');
-					
+
 					str = '<div class="tubo-media-item">';
 					str += '<img src="'+image+'" alt="'+title+'">';
                     if(caption != '') {
@@ -239,6 +239,26 @@ $(document).ready(function() {
                     window.parent.tinyMCE.get(field_id).execCommand("mceInsertContent",false,str);
 				});
 			break;
+            case 'ckeditor':
+                $('.item.active').each(function(index) {
+                    image = $(this).data('image');
+                    title = $(this).data('title');
+                    caption = $(this).data('caption');
+
+                    str = '<div class="tubo-media-item">';
+                    str += '<img src="'+image+'" alt="'+title+'">';
+                    if(caption != '') {
+                        str += '<p>'+caption+'</p>';
+                    }
+                    str += '</div><p></p>';
+                    let editor = window.parent.editor[field_id];
+                    editor.model.change( writer => {
+                        let viewFragment = editor.data.processor.toView( str );
+                        let modelFragment = editor.data.toModel( viewFragment );
+                        editor.model.insertContent( modelFragment, editor.model.document.selection );
+                    } );
+                });
+            break;
 		}
 		window.parent.$('#media .close').click();
 	});
@@ -474,7 +494,7 @@ function setLoadFile(result) {
 	$('.media-content__main-pagination').empty().append(result.paginate);
 	setDetailEmpty();
 }
-/* 
+/*
 	Hàm trả về url load ajax
 	page: số trang cần lấy nếu để null thì sẽ lấy page trên url hiện tại
 	filter: bộ lọc cần lấy nếu để null thì sẽ lấy filter trên url hiện tại

@@ -9,13 +9,17 @@ class Controller extends BaseController
 
 	function __construct() {
 
+        \Asset::addScript(['jquery','general']);
 		$this->middleware(function ($request, $next) {
 			setLanguage(\Session::get('locale'));
 			// Cache cấu hình general
 	        $config_general = getOption('general');
 	        \View::share('config_general',$config_general);
 
-	        // cache menu 
+            // Cache cấu hình du hoc
+		    $config_study_abroad = getOption('study_abroad_category');
+	        \View::share('config_study_abroad',$config_study_abroad);
+	        // cache menu
 	        $config_menu = getOption('menu');
 	        \View::share('config_menu',$config_menu);
 

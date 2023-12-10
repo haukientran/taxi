@@ -274,27 +274,32 @@ return [
     'menu_form' => [
         // Theo bảng
         'table_link' => [
-            'product_categories' => [
-                'name' => 'Danh mục sản phẩm',
-                'models' => 'Sudo\Theme\Models\ProductCategory',
-                'has_locale' => true
-            ],
             'post_categories' => [
                 'name' => 'Danh mục bài viết',
                 'models' => 'Sudo\Theme\Models\PostCategory',
-                'has_locale' => true
+                'has_locale' => false
             ],
             'pages' => [
                 'name' => 'Trang đơn',
                 'models' => 'Sudo\Theme\Models\Page',
-                'has_locale' => true
+                'has_locale' => false
+            ],
+            'pages' => [
+                'name' => 'Trang đơn',
+                'models' => 'Sudo\Theme\Models\Page',
+                'has_locale' => false
             ],
         ],
         // Cố định
         'menu_link' => [
             'vi' => [
                 '/' => 'Trang chủ',
+                '/tin-tuc' => 'Tin tức',
+                '/nhan-su' => 'Nhân sự',
                 '/lien-he' => 'Liên hệ',
+                '/du-hoc' => 'Du học',
+                '/tim-truong' => 'Trường học',
+                '/gioi-thieu' => 'Giới thiệu',
             ],
             'en' => [
                 '/' => 'Home Page',
@@ -318,14 +323,13 @@ return [
             'url' => env('APP_URL', 'http://localhost').'/trang',
             'html' => true,
         ],
-        'products' => [
-            'url' => env('APP_URL', 'http://localhost').'/san-pham',
+        'study_abroads' => [
+            'url' => env('APP_URL', 'http://localhost').'/du-hoc',
             'html' => true,
         ],
-        'product_categories' => [
-            'url' => env('APP_URL', 'http://localhost').'/san-pham',
+        'study_abroad_categories' => [
+            'url' => env('APP_URL', 'http://localhost').'/du-hoc',
             'html' => false,
         ],
-    ],
-    
+    ]
 ];

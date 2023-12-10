@@ -1,14 +1,15 @@
 // deaclare variable
-$color_main: var(--color_main);
-$color_primary: var(--color_primary);
-$color_text_header: var(--color_text_header);
-$color_text_header_hover: var(--color_text_header_hover);
-$background_button: var(--background_button);
-$color_text_button: var(--color_text_button);
-$color_text_accent: var(--color_text_accent);
-$background_button_hover: var(--background_button_hover);
-$color_text_desc: var(--color_text_desc);
-$font_family: var(--font_family);
+$color_main: #00a551;
+$color_text_post : #064ebe;
+$color_text: #000000;
+$color_primary:#00a551;
+$color_text_desc: #7d7d7d;
+$color_black: #000000;
+$color_white :#fff;
+$color_border: #dfdfdf;
+$color_background:#ffff;
+$color_button__form : #00a551;
+$font_family: 'Averta';
 /* dùng cho một vài thuộc tính riêng cho trình duyện VD: transition, box-shadow */
 @mixin css3($atribute, $params) {
 	#{$atribute}: #{$params};
@@ -29,7 +30,7 @@ $font_family: var(--font_family);
 	position: relative;
 	&:before {
 		content: "";
-		top: 0; 
+		top: 0;
 		left: 0;
 		right: 0;
 		bottom: 0;
@@ -85,12 +86,12 @@ $max-breakpoints: (se: 374px, xs: 479px, sm: 575px, md: 767px, lg: 991px, xl: 11
 	    height: 5px;
 	}
 	&::-webkit-scrollbar-track {
-	    background: $scrollbar_bg; 
+	    background: $scrollbar_bg;
 	}
 	&::-webkit-scrollbar-thumb {
 	    background: $scrollbar_color;
 	}
 	&::-webkit-scrollbar-thumb:hover {
-	    background: #68767b; 
+	    background: #68767b;
 	}
 }

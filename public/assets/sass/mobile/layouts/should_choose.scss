@@ -1,0 +1,15 @@
+#should-choose {
+    margin-top: 8px;
+    padding-top: 34px;
+    padding-bottom: 32px;
+   .should-choose {
+        &-container {
+            margin: 0 auto;
+            max-width: 996px;
+        }
+        &-list {
+            display: grid;
+            gap: 15px;
+        }
+    }
+}

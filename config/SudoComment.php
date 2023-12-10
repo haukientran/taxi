@@ -1,4 +1,4 @@
-<?php 
+<?php
 return [
 	// có cho tải hình ảnh lên không
 	'upload_image' => true,
@@ -13,5 +13,5 @@ return [
 	'status_default' => 1,
 
 	// Số trang load tại view
-	'page_number' => 5,
+	'page_number' => 15,
 ];

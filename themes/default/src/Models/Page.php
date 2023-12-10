@@ -5,8 +5,8 @@ namespace Sudo\Theme\Models;
 class Page extends BaseModel
 {
 
-    public function getUrl() {
-    	return route('app.pages.show', $this->slug);
+    public function getUrl($device ='app') {
+        return route($device.'.pages.show', $this->slug);
     }
 
 }

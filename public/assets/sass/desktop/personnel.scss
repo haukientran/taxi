@@ -1,0 +1,114 @@
+@import '../components/mixin.scss';
+@import '../components/ckeditor.scss';
+.personnel {
+    &-banner {
+        height: 200px;
+        background-color: #ff2a80;
+        display: flex;
+        align-items: center;
+    }
+    &-title {
+        position: relative;
+        &::after {
+            content: '';
+            position: absolute;
+            width: 60%;
+            height: 4px;
+            background-color: #ff2a80;
+            bottom: -10px;
+        }
+    }
+    &-bottom,
+    &-top {
+        margin-bottom: 40px;
+    }
+    &-list {
+        padding: 20px 25px;
+        background-color: #f5f5f5;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 25px;
+    }
+}
+// style pages detail
+.info {
+    position: relative;
+    min-height: 800px;
+    &-background {
+        position: absolute;
+        top: -2px;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        img {
+            width: 100%;
+            height: 100%;
+            -o-object-fit: cover;
+            object-fit: cover;
+        }
+    }
+    &-title {
+        font-size: 60px;
+        margin-bottom: 40px;
+    }
+    &-position {
+        display: inline-block;
+        position: relative;
+        &::after {
+            content: '';
+            position: absolute;
+            width: 70%;
+            height: 4px;
+            background: rgb(237,248,251);
+            background: linear-gradient(90deg, rgba(237,248,251,1) 0%, rgba(235,246,251,1) 35%, rgba(9,182,241,1) 100%);
+            bottom: -20px;
+            left: 0;
+        }
+    }
+    &-content {
+        z-index: 1;
+        &__des {
+            margin-left: 30px;
+            padding-top: 100px;
+        }
+    }
+}
+.detail-box {
+    padding: 50px 0;
+    background: rgb(244,249,255);
+    background: linear-gradient(85deg, rgba(244,249,255,1) 0%, rgba(242,249,255,1) 95%);
+    &__bottom ,
+    &__top {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 60px;
+        img {
+            border-radius: 10px;
+            max-height: 450px;
+        }
+    }
+}
+
+.thumbnail {
+    margin: 20px auto;
+    &-list {
+        display: grid;
+        gap: 41px;
+        img {
+            height: 370px;
+            overflow: hidden;
+            border-radius: 30px;
+            width: 100%;
+        }
+    }
+}
+#blog {
+    padding: 10px 0;
+    .blog-title {
+        margin-top: 35px;
+        margin-bottom: 50px;
+    }
+    .blog-list {
+        gap: 28px 50px;
+    }
+}

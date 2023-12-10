@@ -1,0 +1,164 @@
+@import '../components/mixin.scss';
+@import '../components/ckeditor.scss';
+
+// style pages chi tiết bài viêt
+.post {
+    margin-top: 40px;
+    &-left {
+        width: 100%;
+    }
+    &-right {
+        width: 100%;
+        .sidebar {
+            &__category {
+                border-left:1px solid $color_border;
+                .text {
+                    padding: 10px;
+                    border-bottom: 2px solid $color_main;
+                }
+                ul {
+                    li {
+                        padding: 8px 5px;
+                        color: #374760;
+                        border-bottom: 1px solid $color_border;
+                        &:last-child {
+                            border-bottom: none;
+                        }
+                        a {
+                            display: inline-block;
+                            color: #374760;
+                        }
+                    }
+                }
+            }
+            &__fanpage {
+                .facebook-embed {
+                    color: #333;
+                    width: 100%;
+                    text-align: center;
+                }
+                .facebook-embed iframe {
+                    width: 100%;
+                    height: 200px;
+                    border: none;
+                }
+            }
+            &__blog {
+                margin-top: 20px;
+                .blog-item {
+                    margin-top: 20px;
+                    &__thumbnail {
+                        max-width: 35%;
+                        img {
+                            border-radius: 8px;
+                        }
+                    }
+                    &__content {
+                        max-width: 65%;
+                        padding-left: 15px;
+                    }
+                }
+            }
+        }
+    }
+}
+.blog-item {
+    &__thumbnail {
+        flex: 0 0 40%;
+        img {
+            width: 100%;
+        }
+    }
+    &__content {
+        flex: 0 0 60%;
+    }
+    &__title {
+        margin-top: 10px;
+    }
+}
+.sub_categories {
+    width: 100%;
+    margin-top: 20px;
+    &__title {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    &__list {
+        width: 100%;
+        .sub_item {
+            width: 100%;
+            margin-bottom: 20px;
+            padding: 15px 30px;
+            background-color: #F4F5F7;
+            border-radius: 4px;
+            border-left: 3px solid;
+            position: relative;
+            &:before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: -1px;
+                height: 100%;
+                z-index: 9;
+                border-radius: 4px;
+                transition: width .5s;
+                width: 0;
+            }
+
+            &:hover:before {
+                width: 100%;
+                transition: width .5s;
+                background-color: #276AE3;
+            }
+
+            &:hover a {
+                color: #fff;
+            }
+
+            &:nth-child(2n) {
+                border-color: #27AE60;
+
+                &:hover:before {
+                    background-color: #27AE60;
+                }
+            }
+
+            &:nth-child(2n+1) {
+                border-color: #276AE3;
+
+                &:hover:before {
+                    background-color: #276AE3;
+                }
+            }
+
+            &:nth-child(3n) {
+                border-color: #ae1f2b;
+
+                &:hover:before {
+                    background-color: #ae1f2b;
+                }
+            }
+
+            a {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                font-size: 16px;
+                font-weight: bold;
+                position: relative;
+                z-index: 10;
+            }
+            &:last-child {
+                margin-bottom: 0px;
+            }
+        }
+    }
+}
+// style post list
+.post-list {
+    display: grid;
+    grid-gap: 40px;
+    grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+}

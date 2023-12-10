@@ -8,10 +8,10 @@ return [
     'enable_version' => true,
 
     // Version hiển thị khi enable_vesion là true
-    'vesion' => '1.0',
+    'vesion' => '3.0',
 
     // Các thư viện js mặc định được sử dụng, là key được định nghĩa trong phần resource bên dưới.
-    'scripts' => [ 
+    'scripts' => [
         //
     ],
 
@@ -23,10 +23,10 @@ return [
     // Định nghĩa tất cả đường dẫn tới assets.
     'resources' => [
     	// Định nghĩa các thư viện css
-    	'styles' => [ 
+    	'styles' => [
          //    'style' => [
          //    	// Có cho phép sử dụng cdn hay không, nếu là true thì bạn phải định nghĩa link tới cnd bên dưới
-	        //     'use_cdn' => false, 
+	        //     'use_cdn' => false,
 	        //     // Vị trí chèn, trên header hay dưới footer [top | bottom]
 	        //     'location' => 'bottom',
 	        //     'src' => [
@@ -41,21 +41,47 @@ return [
 
         // Định nghĩa các thư viện js
         'scripts' => [
-         //    'main' => [
-         //    	// Có cho phép sử dụng cdn hay không, nếu là true thì bạn phải định nghĩa link tới cnd bên dưới
-	        //     'use_cdn' => false, 
-	        //     // Vị trí chèn, trên header hay dưới footer [top | bottom]
-	        //     'location' => 'bottom',
-	        //     'src' => [
-	        //     	// Đường dẫn tới thư viện
-	        //     	'local' => '/assets/js/main.min.js',
-	        //     	'cdn' => null,
-	        //     ],
-	        //     // Các thuộc tính bổ sung, nếu cần
-	        //     'attributes' => [
-	        //     	'defer' => null,
-	        //     ],
-	        // ],
+            'jquery' => [
+                'use_cdn' => false,
+                'location' => 'top',
+                'src' => [
+                    'local' => '/admin_assets/libs/jquery/jquery.min.js',
+                    'cdn' => null,
+                ],
+                'attributes' => [
+                    'defer' => null,
+                ],
+            ],
+            'general' => [
+            	// Có cho phép sử dụng cdn hay không, nếu là true thì bạn phải định nghĩa link tới cnd bên dưới
+	            'use_cdn' => false,
+	            // Vị trí chèn, trên header hay dưới footer [top | bottom]
+	            'location' => 'bottom',
+	            'src' => [
+	            	// Đường dẫn tới thư viện
+	            	'local' => '/assets/build/js/general.min.js',
+	            	'cdn' => null,
+	            ],
+	            // Các thuộc tính bổ sung, nếu cần
+	            'attributes' => [
+	            	'defer' => null,
+	            ],
+	        ],
+            'general_mb' => [
+            	// Có cho phép sử dụng cdn hay không, nếu là true thì bạn phải định nghĩa link tới cnd bên dưới
+	            'use_cdn' => false,
+	            // Vị trí chèn, trên header hay dưới footer [top | bottom]
+	            'location' => 'bottom',
+	            'src' => [
+	            	// Đường dẫn tới thư viện
+	            	'local' => '/assets/build/js/general_mb.min.js',
+	            	'cdn' => null,
+	            ],
+	            // Các thuộc tính bổ sung, nếu cần
+	            'attributes' => [
+	            	'defer' => null,
+	            ],
+	        ],
         ],
     ],
 ];

@@ -5,39 +5,23 @@
     'lazy'   => true,
     'title'  => ''
 ]) --}}
-@if (isset($lazy) && $lazy == false)
-    <img
-        src="{{($src ?? '')}}"
-        alt="{{$alt ?? getAlt($src??'')}}"
-        @if (isset($title) && !empty($title))
-            title="{{$title ?? ''}}"
-        @endif
-        @if (isset($width) && !empty($width))
-            width="{{$width ?? ''}}"
-        @endif
-        @if (isset($height) && !empty($height))
-            height="{{$height ?? ''}}"
-        @endif
-        @if (isset($function) && !empty($function))
-            onclick="{{$function ?? ''}}"
-        @endif
-    >
-@else
-    <img
+<img
+    @if(isset($lazy) && $lazy == true)
         loading="lazy"
-        src="{{($src ?? '')}}"
-        alt="{{$alt ?? getAlt($src??'')}}"
-        @if (isset($title) && !empty($title))
-            title="{{$title ?? ''}}"
-        @endif
-        @if (isset($width) && !empty($width))
-            width="{{$width ?? ''}}"
-        @endif
-        @if (isset($height) && !empty($height))
-            height="{{$height ?? ''}}"
-        @endif
-        @if (isset($function) && !empty($function))
-            onclick="{{$function ?? ''}}"
-        @endif
-    >
-@endif
+    @endif
+    src="{{($src ?? '')}}"
+    alt="{{$alt ?? getAlt($src??'')}}"
+    @if (isset($title) && !empty($title))
+        title="{{$title ?? ''}}"
+    @endif
+    @if (isset($width) && !empty($width))
+        width="{{$width ?? ''}}"
+    @endif
+    @if (isset($height) && !empty($height))
+        height="{{$height ?? ''}}"
+    @endif
+    @if(isset($class) && !empty($class))
+        class="{{ $class ?? ''}}"
+    @endif
+    {{-- style="height: auto;" --}}
+>

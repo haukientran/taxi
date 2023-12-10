@@ -32,7 +32,7 @@ class ContactController extends AdminController
         // Build bảng
         $listdata->no_add();
         $listdata->add('name', 'Thông tin liên hệ', 0);
-        $listdata->add('content', 'Nội dung liên hệ', 0);
+        $listdata->add('content', 'Lịch trình', 0);
         $listdata->add('', 'Thời gian', 0, 'time');
         $listdata->add('status', 'Trạng thái', 0, 'status');
         $listdata->add('', 'Language', 0, 'lang');

@@ -334,7 +334,7 @@ function cutString($str, $length = 150, $char=" ..."){
     if(mb_substr($str, $length, 1, "UTF-8") == " ") return $substr . $char;
 
     //Xác định dấu " " cuối cùng trong chuỗi $substr vừa cắt
-    $strPoint= mb_strrpos($substr, " ", "UTF-8");
+    $strPoint= mb_strrpos($substr, " ", 0,"UTF-8");
 
     //Return string
     if($strPoint < $length - 20) return $substr . $char;
@@ -562,7 +562,7 @@ function getImage($image = '', $size = '', $image_default = '') {
     } else {
         $image = replaceImageLink($image);
         $image = resizeImage($image,$size);
-        $image = str_replace(['sudospaces'], ['resize.sudospaces'], $image).'.webp';
+        $image = str_replace(['sudospaces'], ['resize.sudospaces'], $image);
     }
     return $image;
 }
@@ -670,6 +670,6 @@ function resizeWImage($image, $w='w300'){
         $image = str_replace(['example.sudospaces'], ['sudospaces'], $image);
         $filepath = filePath($image);
         $image = str_replace(['sudospaces', $filepath['basename'] ?? ''], ['resize.sudospaces', $w.'/'.$filepath['basename'] ?? ''], $image);
-        return $image.'.webp';
+        return $image;
     }
 }

@@ -1,0 +1,22 @@
+{
+    "/assets/build/css/post.min.css": "/assets/build/css/post.min.css",
+    "/assets/build/css/page_mb.min.css": "/assets/build/css/page_mb.min.css",
+    "/assets/build/css/page.min.css": "/assets/build/css/page.min.css",
+    "/assets/build/css/home.min.css": "/assets/build/css/home.min.css",
+    "/assets/build/css/general_mb.min.css": "/assets/build/css/general_mb.min.css",
+    "/assets/build/css/general.min.css": "/assets/build/css/general.min.css",
+    "/assets/build/css/home_mb.min.css": "/assets/build/css/home_mb.min.css",
+    "/assets/build/css/search_school_mb.min.css": "/assets/build/css/search_school_mb.min.css",
+    "/assets/build/css/search_school.min.css": "/assets/build/css/search_school.min.css",
+    "/assets/build/css/personnel_mb.min.css": "/assets/build/css/personnel_mb.min.css",
+    "/assets/build/css/personnel.min.css": "/assets/build/css/personnel.min.css",
+    "/assets/build/css/product_mb.min.css": "/assets/build/css/product_mb.min.css",
+    "/assets/build/css/product.min.css": "/assets/build/css/product.min.css",
+    "/assets/build/css/post_mb.min.css": "/assets/build/css/post_mb.min.css",
+    "/assets/build/js/general.min.js": "/assets/build/js/general.min.js",
+    "/assets/build/js/general_mb.min.js": "/assets/build/js/general_mb.min.js",
+    "/admin_assets/plugins/ckeditor5/custom.min.js": "/admin_assets/plugins/ckeditor5/custom.min.js",
+    "/assets/build/js/page.min.js": "/assets/build/js/page.min.js",
+    "/platforms/comments/web/js/comments.min.js": "/platforms/comments/web/js/comments.min.js",
+    "/assets/build/js/search_school.min.js": "/assets/build/js/search_school.min.js"
+}

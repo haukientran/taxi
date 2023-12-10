@@ -1,4 +1,16 @@
 @import 'mixin.scss';
+/* Sử dụng vòng lặp để tạo lớp font-size từ fs-10 đến fs-60 */
+@for $i from 10 through 60 {
+    .fs-#{$i} {
+        font-size: #{$i}px;
+    }
+}
+/* Sử dụng vòng lặp để tạo lớp light-height từ fs-10 đến fs-60 */
+@for $i from 10 through 60 {
+    .lh-#{$i} {
+        line-height: #{$i}px;
+    }
+}
 .flex {
     display: flex;
     flex-wrap: wrap;
@@ -24,6 +36,9 @@
 .flex-right-center {
     @include flex(flex-end, center);
 }
+.flex-left-between {
+    @include flex(flex-start, space-between);
+}
 .text-center {
     text-align: center;
     width: 100%;
@@ -34,17 +49,39 @@
 .f-italic {
     font-style: italic;
 }
-.color-main {
-    color: $color_main;
+.color_main {
+    color: $color_main!important;
 }
-.white {
-    color: #fff;
+.color_primary {
+    color: $color_primary!important;
 }
-.black {
-    color: #000;
+.color_black {
+    color: $color_black!important;
+}
+.color_white {
+    color: $color_white!important;
+}
+.color_text {
+    color: $color_text!important;
+}
+.color_desc {
+    color: $color_text_desc!important;
+}
+.text_form {
+	color: $color_button__form!important;
+}
+.text_emb_underline {
+    text-decoration: underline;
 }
 .text-up {
     text-transform: uppercase;
+}
+.a_default {
+    color: #147ee1!important;
+    text-decoration: underline;
+}
+.hidden {
+    display: none!important;
 }
 .w-100 {
     width: 100%;
@@ -55,15 +92,61 @@
 .fw-500 {
     font-weight: 500;
 }
-.color_head {
-    color: $color_text_header;
-    &:hover {
-        color: $color_text_header_hover;
-    }
+.fw-400 {
+    font-weight: 400;
 }
-.color_title {
-    color: $color_text_accent;
+.ml-5 {
+    margin-left: 5px;
 }
-.color_desc {
-    color: $color_text_desc;
+.mt-2 {
+    margin-top: 2px;
+}
+.mt-5 {
+    margin-top: 5px;
+}
+.mb-40 {
+    margin-bottom: 40px;
+}
+.mb-30 {
+    margin-bottom: 30px;
+}
+.mb-20 {
+    margin-bottom: 20px;
+}
+.mb-15 {
+    margin-bottom: 15px;
+}
+.mb-10 {
+    margin-bottom: 10px;
+}
+.mb-8 {
+    margin-bottom: 8px;
+}
+.mb-2 {
+    margin-bottom: 2px;
+}
+
+.mt-30 {
+    margin-top: 30px;
+}
+.mt-20 {
+    margin-top: 20px;
+}
+.mt-15 {
+    margin-top: 15px;
+}
+.mt-10 {
+    margin-top: 10px;
+}
+.mt-8 {
+    margin-top: 8px;
+}
+.mt-2 {
+    margin-top: 2px;
+}
+.block {
+    display: block;
+}
+.float_right {
+    float: right;
 }

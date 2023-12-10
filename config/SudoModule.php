@@ -1,37 +1,7 @@
-<?php 
+<?php
 
 return [
 	'modules' => [
-		'products' => [
-			'name' 			=> 'Sản phẩm',
-			'permision' 	=> [
-				[ 'type' => 'index', 'name' => 'Truy cập' ],
-				[ 'type' => 'create', 'name' => 'Thêm' ],
-				[ 'type' => 'edit', 'name' => 'Sửa' ],
-				[ 'type' => 'restore', 'name' => 'Lấy lại' ],
-				[ 'type' => 'delete', 'name' => 'Xóa' ],
-			],
-		],
-		'product_categories' => [
-			'name' 			=> 'Danh mục sản phẩm',
-			'permision' 	=> [
-				[ 'type' => 'index', 'name' => 'Truy cập' ],
-				[ 'type' => 'create', 'name' => 'Thêm' ],
-				[ 'type' => 'edit', 'name' => 'Sửa' ],
-				[ 'type' => 'restore', 'name' => 'Lấy lại' ],
-				[ 'type' => 'delete', 'name' => 'Xóa' ],
-			],
-		],
-		'attributes' => [
-			'name' 			=> 'Thuộc tính sản phẩm',
-			'permision' 	=> [
-				[ 'type' => 'index', 'name' => 'Truy cập' ],
-				[ 'type' => 'create', 'name' => 'Thêm' ],
-				[ 'type' => 'edit', 'name' => 'Sửa' ],
-				[ 'type' => 'restore', 'name' => 'Lấy lại' ],
-				[ 'type' => 'delete', 'name' => 'Xóa' ],
-			],
-		],
 		'filters' => [
 			'name' 			=> 'Bộ lọc',
 			'permision' 	=> [
@@ -49,16 +19,7 @@ return [
 				[ 'type' => 'delete', 'name' => 'Xóa' ],
 			]
 		],
-		'brands' => [
-			'name' 			=> 'Thương hiệu',
-			'permision' 	=> [
-				[ 'type' => 'index', 'name' => 'Truy cập' ],
-				[ 'type' => 'create', 'name' => 'Thêm' ],
-				[ 'type' => 'edit', 'name' => 'Sửa' ],
-				[ 'type' => 'restore', 'name' => 'Lấy lại' ],
-				[ 'type' => 'delete', 'name' => 'Xóa' ],
-			],
-		],
+
 		'slides' => [
 			'name' 			=> 'Quản lý slides',
 			'permision' 	=> [
@@ -69,38 +30,8 @@ return [
 				[ 'type' => 'delete', 'name' => 'Xóa' ],
 			],
 		],
-		'orders' => [
-			'name' 			=> 'Đơn hàng',
-			'permision' 	=> [
-				[ 'type' => 'index', 'name' => 'Truy cập' ],
-				[ 'type' => 'create', 'name' => 'Thêm' ],
-				[ 'type' => 'edit', 'name' => 'Sửa' ],
-				[ 'type' => 'restore', 'name' => 'Lấy lại' ],
-				[ 'type' => 'delete', 'name' => 'Xóa' ],
-			],
-		],
 		'customers' => [
 			'name' 			=> 'Khách hàng',
-			'permision' 	=> [
-				[ 'type' => 'index', 'name' => 'Truy cập' ],
-				[ 'type' => 'create', 'name' => 'Thêm' ],
-				[ 'type' => 'edit', 'name' => 'Sửa' ],
-				[ 'type' => 'restore', 'name' => 'Lấy lại' ],
-				[ 'type' => 'delete', 'name' => 'Xóa' ],
-			],
-		],
-		'shippings' => [
-			'name' 			=> 'Vận chuyển',
-			'permision' 	=> [
-				[ 'type' => 'index', 'name' => 'Truy cập' ],
-				[ 'type' => 'create', 'name' => 'Thêm' ],
-				[ 'type' => 'edit', 'name' => 'Sửa' ],
-				[ 'type' => 'restore', 'name' => 'Lấy lại' ],
-				[ 'type' => 'delete', 'name' => 'Xóa' ],
-			],
-		],
-		'taxes' => [
-			'name' 			=> 'Thuế',
 			'permision' 	=> [
 				[ 'type' => 'index', 'name' => 'Truy cập' ],
 				[ 'type' => 'create', 'name' => 'Thêm' ],
@@ -214,8 +145,12 @@ return [
 				[ 'type' => 'home', 'name' => 'Trang chủ' ],
 				[ 'type' => 'menu', 'name' => 'Menu' ],
 				[ 'type' => 'contact', 'name' => 'Liên hệ' ],
+				[ 'type' => 'post_category', 'name' => 'Tin tức' ],
+				[ 'type' => 'personnel', 'name' => 'Nhân sự' ],
+				[ 'type' => 'introduce', 'name' => 'Giới thiệu' ],
 				[ 'type' => 'overview', 'name' => 'Cài đặt' ],
 				[ 'type' => 'googleAuthenticate', 'name' => 'Bảo mật Google Authenticate' ],
+                [ 'type' => 'general_ai', 'name' => 'Cấu hình auto content' ],
 			],
 		],
 		'media' => [
@@ -241,7 +176,7 @@ return [
 		'restore' 				=> 'Lấy lại',
 		'delete' 				=> 'Xóa',
 	],
-	
+
 	// Hiển thị chi tiết tên cho các trường của từng bảng (Ưu tiên nếu không có sẽ lấy logs_name)
 	'logs' => [
 		'admin_users' => [
@@ -250,7 +185,7 @@ return [
 			'capabilities' 		=> 'Quyền',
 		],
 	],
-	// Logs hiển thị tên các field chung của các bảng 
+	// Logs hiển thị tên các field chung của các bảng
 	'logs_name' => [
 		'category_id' 			=> 'Danh mục',
 		'parent_id' 			=> 'Danh mục cha',
@@ -270,7 +205,7 @@ return [
 	// Trường được set tại fields này là trường nội dung thì hiển thị sẽ là nội dung
 	'logs_content_field' => [
 		'capabilities',
-		'detail', 
+		'detail',
 		'content',
 	],
 ];

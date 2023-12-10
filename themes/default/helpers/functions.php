@@ -1,4 +1,4 @@
-<?php 
+<?php
 /**
  * Lấy nhanh ngôn ngữ hiện tại dùng cho cả controller và blade
  */
@@ -29,7 +29,7 @@ function metaSeo($table = '', $table_id = '', $options = []) {
             // Meta Description
             if (!empty($data_seo->description)) {
                 $meta_seo['description'] = $data_seo->description ?? '';
-                
+
             }
             // Meta Robot
             if (!empty($data_seo->robots)) {
@@ -148,4 +148,117 @@ function getAlt($link='') {
         $alt = str_replace(['-tiny','-small','-medium','-large'], '', $alt);
         return $alt;
     }
+}
+
+// Xoá nội dung thừa ckeditor
+function replaceCkeditor($content){
+    $doc = new \DOMDocument();
+    @$doc->loadHTML('<meta http-equiv="content-type" content="text/html; charset=utf-8">'.$content);
+    libxml_clear_errors();
+    $has_changed = false;
+    $xpath = new \DOMXPath($doc);
+    $resize_divs = $xpath->query("//div[@class='ck ck-reset_all ck-widget__resizer']");
+    foreach($resize_divs as $resize_div){
+        try{
+            $resize_div->parentNode->removeChild($resize_div);
+        }catch(\Exception $e){
+            \Log::error($e->getMessage());
+        }
+    }
+    $nodes = $xpath->query("//div[@class='ck ck-reset_all ck-widget__type-around']" );
+    foreach($nodes as $node){
+        $childs = $node->childNodes;
+        if(count($childs)) {
+            try{
+                $node->parentNode->removeChild($node);
+            }catch(\Exception $e){
+                \Log::error($e->getMessage());
+            }
+        }
+    }
+    // remove comment code
+    $content = preg_replace('/<!--(.|\s)*?-->/', '', $content);
+
+    // remove tag style
+    $styles = $xpath->query('//style[@type="text/css"]');
+    if ($styles) {
+        foreach ($styles as $style) {
+            $style->parentNode->removeChild($style);
+            $has_changed = true;
+        }
+    }
+
+    // set width, heith cho img nếu chưa có
+    foreach($doc->getElementsByTagName('img') as $imgItem) {
+        if (!$imgItem->hasAttribute('width'))
+        {
+            $imgItem->setAttribute('width', '600');
+            $has_changed = true;
+        }
+
+        if (!$imgItem->hasAttribute('height'))
+        {
+            $imgItem->setAttribute('height', '600');
+            $has_changed = true;
+        }
+        if (!$imgItem->hasAttribute('loading'))
+        {
+            $imgItem->setAttribute('loading', 'lazy');
+            $has_changed = true;
+        }
+        $alt = $imgItem->getAttribute('alt');
+        if($alt == '') {
+            $link = $imgItem->getAttribute('src');
+            $setAlt = getAlt($link);
+            $imgItem->setAttribute('alt', $setAlt);
+        }
+
+        $src = resizeWImage($imgItem->getAttribute('src'),'');
+        $imgItem->setAttribute('src', $src);
+    }
+    // loading lazy cho video
+    foreach($doc->getElementsByTagName('iframe') as $imgItem) {
+
+        if (!$imgItem->hasAttribute('loading'))
+        {
+            $imgItem->setAttribute('loading', 'lazy');
+            $has_changed = true;
+        }
+    }
+    // tự động đổi link cũ -> link mới trong chi tiết | thêm nofollow cho link ngoài trong chi tiết bài viết
+    foreach($doc->getElementsByTagName('a') as $aItem) {
+        $href = $aItem->getAttribute('href');
+        $check_link = strpos($href, 'https://duhocleanh.vn');
+        $check_link_toc = strpos($href, '#metoc');
+        $cutHref = str_replace(['https://duhocleanh.vn', 'duhocleanh.vn'], '', $href);
+        $links = DB::table('sync_links')->where('old', $cutHref)->where('status', 1)->first();
+        if(isset($links) && $links != '') {
+            $href_new = $links->new;
+            $cutHref_new = str_replace(['https://duhocleanh.vn', 'duhocleanh.vn'], '', $href_new);
+            $aItem->setAttribute('href','https://duhocleanh.vn'.$cutHref_new);
+        }
+        if($check_link === false && $check_link_toc === false) {
+            $aItem->setAttribute('rel', 'nofollow noopener noreferrer');
+        }
+    }
+    if ($has_changed) {
+        $content = $doc->saveHTML();
+        $content = preg_replace('~<(?:!DOCTYPE|/?(?:html|head|body|meta))[^>]*>\s*~i', '', $content);
+    }
+    $content = replaceButton($content);
+    return $content;
+}
+function replaceButton($content) {
+    // Check for [dang_ky_ngay]
+    $button_pattern = '/\[dang_ky_ngay\]/';
+    $has_button = preg_match($button_pattern, $content);
+    // Replace [button_config]
+    $button_html = '';
+    if ($has_button) {
+        $button_html = '<div class="w-100 text-center">
+                             <span class="button button__primary color_white" id ="register_now"> Đăng ký ngay </span>
+                        </div>';
+        $content = preg_replace($button_pattern, $button_html, $content);
+    }
+    return $content;
 }
