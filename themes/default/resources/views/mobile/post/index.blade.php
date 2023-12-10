@@ -2,9 +2,10 @@
 @section('head')
     <style type="text/css">
         @php
-            echo file_get_contents(asset("./assets/build/css/post_mb.min.css?v=".config('SudoAsset.vesion')));
+            /*echo file_get_contents(asset("./assets/build/css/post_mb.min.css?v=".config('SudoAsset.vesion')));*/
         @endphp
     </style>
+    <link rel="stylesheet" type="text/css" href="{{ asset('./assets/build/css/post_mb.min.css?v='.config('SudoAsset.vesion')) }}">
 @endsection
 @section('content')
     <main id="category_post">
@@ -12,7 +13,7 @@
             <section class="post w-100">
                 <div class="post-left">
                     <div class="post-left__title">
-                        <h1 class="post-title fs-32 lh-36 f-w-b"> {!! $category->name  ?? $config_post['category_title'] !!}</h1>
+                        <h1 class="post-title fs-32 lh-36 f-w-b"> {!! $category->name  ?? $config_post['category_title'] ?? '' !!}</h1>
                     </div>
                     <div class="post-left__content mt-30">
                         <div class="post-list"  id="listdata">
@@ -52,12 +53,6 @@
                                     @endif
                                 @endif
                             </ul>
-                        </div>
-                        <div class="sidebar__fanpage mt-20">
-                            <div class="facebook-embed">
-                                <!-- Dán mã nhúng từ Facebook vào đây -->
-                                {!! $config_post['iframe_pages'] !!}
-                            </div>
                         </div>
                         <div class="sidebar__blog">
                             <p class="text text-up fs-24 lh-26 w-100 color_main fw-600">Bài viết mới nhất</p>

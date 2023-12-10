@@ -1,10 +1,11 @@
 <?php $__env->startSection('head'); ?>
 	<style type="text/css">
 		<?php
-			/*echo file_get_contents(asset("./assets/build/css/page.min.css?v=".config('SudoAsset.vesion')));*/
 		?>
+            /*echo file_get_contents(asset("./assets/build/css/page_mb.min.css?v=".config('SudoAsset.vesion')));*/
 	</style>
-    <link rel="stylesheet" type="text/css" href="<?php echo e(asset('./assets/build/css/page.min.css?v='.config('SudoAsset.vesion'))); ?>">
+    
+    <link rel="stylesheet" type="text/css" href="<?php echo e(asset('./assets/build/css/page_mb.min.css?v='.config('SudoAsset.vesion'))); ?>">
 <?php $__env->stopSection(); ?>
 <?php $__env->startSection('content'); ?>
 <main class="contact">
@@ -14,7 +15,7 @@
             <?php echo $config_contact['link_map'] ?? ''; ?>
 
         </div>
-        <div class="contact-content flex">
+        <div class="contact-content">
             <div class="contact-content__form">
                 <?php if(isset($text_success) && $text_success == true): ?>
                     <h4 class="fs-18 f-w-b lh-20 mb-20">Gửi yêu cầu liên hệ thành công. Xin cảm ơn!</h4>
@@ -22,7 +23,7 @@
                     <form class="pl-lg-2" action="javascript:;" method="post" id="contact">
                         <?php echo csrf_field(); ?>
                         <input type="hidden" name="type" value="0">
-                        <div class="form-box flex">
+                        <div class="form-box">
                             <div class="form-item">
                                 <label for="name" class="fs-16">Họ và tên <span class="text_emb">*</span></label> <br>
                                 <input type="text" class="form-control field" name="name" id="name" placeholder="Họ và Tên" data-validate="text" aria-label="Họ và Tên">
@@ -98,4 +99,4 @@
 <?php $__env->stopSection(); ?>
 
 
-<?php echo $__env->make('Default::web.layouts.app', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH /var/home/themes/default/src/Providers/../../resources/views/web/pages/contact.blade.php ENDPATH**/ ?>
+<?php echo $__env->make('Default::mobile.layouts.app', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH /var/home/themes/default/src/Providers/../../resources/views/mobile/pages/contact.blade.php ENDPATH**/ ?>

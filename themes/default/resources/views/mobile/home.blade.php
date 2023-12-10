@@ -2,13 +2,16 @@
 @section('head')
     <style type="text/css">
         @php
-            echo file_get_contents(asset("./assets/build/css/home_mb.min.css?v=".config('SudoAsset.vesion')));
-            echo file_get_contents(asset("/admin_assets/libs/fancybox/jquery.fancybox.min.css"));
+            /*echo file_get_contents(asset("./assets/build/css/home_mb.min.css?v=".config('SudoAsset.vesion')));*/
+            /*echo file_get_contents(asset("/admin_assets/libs/fancybox/jquery.fancybox.min.css"));*/
         @endphp
     </style>
+
+    <link rel="stylesheet" type="text/css" href="{{ asset('/assets/build/css/home_mb.min.css?v='.config('SudoAsset.vesion')) }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('/admin_assets/libs/fancybox/jquery.fancybox.min.css') }}">
     @if(isset($slides) && count($slides) > 0)
         @foreach ($slides as $slide)
-            <link rel="preload" as="image" href="{{resizeWImage(addWebp($slide->image), 'w600') }}">
+            <link rel="preload" as="image" href="{{resizeWImage($slide->image, 'w600') }}">
         @endforeach
     @endif
 @endsection
@@ -28,6 +31,7 @@
         </div>
     </section>
     @include('Default::mobile.layouts.should-choose_home')
+    @include('Default::mobile.layouts.register', ['title' => isset($setting_home['register_title']) ? $setting_home['register_title'] : 'ĐĂNG KÝ TƯ VẤN MIỄN PHÍ'])
     @if(isset($arboards) && count($arboards) > 0)
     <section id="nation">
         <div class="container">
@@ -69,8 +73,7 @@
     @include('Default::mobile.layouts.feedback_home', ['title' => isset($setting_home['feedback_title']) ? $setting_home['feedback_title'] : 'Chia sẻ từ học viên Lê Ánh'])
     @include('Default::mobile.layouts.list_image_home',['title'=> isset($setting_home['activity_title']) ? $setting_home['activity_title'] : 'Hoạt động tại Lê ánh' ])
     @include('Default::mobile.layouts.evaluate')
-    @include('Default::mobile.layouts.blog',['posts'=>$posts, 'title'=> isset($setting_home['news_title']) ? $setting_home['news_title'] : 'Tin tức sự kiện'])
-    @include('Default::mobile.layouts.register', ['title' => isset($setting_home['register_title']) ? $setting_home['register_title'] : 'ĐĂNG KÝ TƯ VẤN MIỄN PHÍ'])
+    @include('Default::mobile.layouts.blog',['posts'=>$posts, 'title'=> isset($setting_home['news_title']) ? $setting_home['news_title'] : 'Tin tức nổi bật'])
 
     @if(isset($setting_home['partner']['image']) && count($setting_home['partner']['image']) > 0)
     <section class="partner" id="partner">

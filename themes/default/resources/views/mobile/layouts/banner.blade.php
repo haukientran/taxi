@@ -6,7 +6,7 @@
                 @foreach($slides as $key => $slide)
                     <div class="item" data-thumnail="">
                         @include('Default::general.components.image', [
-                            'src' => resizeWImage($slide->image_mb ?? '/assets/images/banner_home.png', 'w600'),
+                            'src' => getImage($slide->image ?? '/assets/images/banner_home.png', 'large'),
                             'width' => '416px',
                             'height' => '600px',
                             "lazy"   => $key != 0 ? true : '',

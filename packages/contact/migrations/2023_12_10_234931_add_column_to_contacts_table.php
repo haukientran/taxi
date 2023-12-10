@@ -18,6 +18,8 @@ class AddColumnToContactsTable extends Migration
             $table->integer('type_contact')->default(4);
             $table->string('departure')->nullable();
             $table->string('destination')->nullable();
+            $table->integer('type')->default(1);
+            $table->string('address')->nullable();
         });
     }
 
@@ -33,6 +35,8 @@ class AddColumnToContactsTable extends Migration
             $table->dropColumn('type_contact');
             $table->dropColumn('departure');
             $table->dropColumn('destination');
+            $table->dropColumn('type');
+            $table->dropColumn('address');
         });
     }
 }

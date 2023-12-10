@@ -2,9 +2,11 @@
 @section('head')
     <style type="text/css">
         @php
-            echo file_get_contents(asset("./assets/build/css/post_mb.min.css?v=".config('SudoAsset.vesion')));
+            /*echo file_get_contents(asset("./assets/build/css/post_mb.min.css?v=".config('SudoAsset.vesion')));*/
         @endphp
     </style>
+
+    <link rel="stylesheet" type="text/css" href="{{ asset('./assets/build/css/post_mb.min.css?v='.config('SudoAsset.vesion')) }}">
 @endsection
 @section('content')
     <main id="post">
@@ -68,43 +70,6 @@
             </section>
         </div>
         @include('Default::mobile.layouts.blog',['posts'=>$related_posts, 'title'=>'Bài viết liên quan'])
-        <div class="container">
-            <section class="sub_categories">
-                <div class="sub_categories__title">
-                    <h2 class="fs-24 lh-30 color_main">Khám phá nhiều chủ đề khác</h2>
-                </div>
-                <div class="sub_categories__list">
-                    @if(isset($config_post['topic']['name']) && count($config_post['topic']['name']) > 0)
-                        @foreach($config_post['topic']['name'] as $key => $name)
-                            <div class="sub_item">
-                                <a href="{{ $config_post['topic']['link'][$key] }}" aria-label="{{ $name ?? '' }}">
-                                    {{ $name ?? '' }}
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" width="10" height="10"><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"></path></svg>
-                                </a>
-                            </div>
-                        @endforeach
-                    @endif
-                </div>
-            </section>
-        </div>
-        <div class="container">
-            <div class="comment-content w-100">
-                @include('Comment::list', [
-                    'type' => 'posts',
-                    'type_id' => $post->id ?? 0,
-                    'regulation_link' => '#',
-                    'no_comment_text' => 'Hãy để lại bình luận của bạn tại đây!',
-                    'title' => 'Bình luận',
-                    'title_button' => 'Viết bình luận',
-                    'vote' => true,
-                    'rank' => $post->average_comment  ?? 0,
-                    'total_comment' => $post->total_comment_by_id  ?? 1,
-                    'list_comment_star' => $post->list_average_comment  ?? [],
-                    'data' => $post  ?? 0,
-                    'mobile' => true,
-                ])
-            </div>
-        </div>
     </main>
     @include('Default::mobile.layouts.popup_register')
 @endsection

@@ -1,3 +1,0 @@
-<?php echo $__env->make('Table::components.image',['image' => $value->getImage()], \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
-<?php echo $__env->make('Table::components.link',['text' => $value->title, 'url' => route('admin.slides.edit', $value->id)], \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
-<?php echo $__env->make('Table::components.edit_text', [ 'width' => '100px', 'name' => 'orders' ], \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH /var/home/packages/slides/src/Providers/../../resources/views/table/index.blade.php ENDPATH**/ ?>

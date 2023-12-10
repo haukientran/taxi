@@ -74,9 +74,8 @@ class PageController extends Controller
 			DB::table('contacts')->insert([
 				'name'=> $name ?? '',
 				'email'=> $email,
-				'note'=> $note,
+				'content'=> $note,
 				'phone'=> $phone,
-                'type' =>(int)$type,
                 'address' =>$address,
 				'created_at' => $created_at,
 				'updated_at' => $updated_at

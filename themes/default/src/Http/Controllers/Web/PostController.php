@@ -140,20 +140,8 @@ class PostController extends Controller
 				'name' => $post->name
 			],
 		];
-        if (is_null($post->list_category)) {
-            $list_category = StudyAbroad::select('study_abroads.*')
-                ->select('name','slug','id')
-                ->join('pins', 'study_abroads.id', 'pins.type_id')
-                ->where('pins.place', 'category_study_abroad')
-                ->where('pins.type', 'study_abroads')
-                ->where('pins.value', '<>', '')
-                ->orderBy('pins.value', 'ASC')
-                ->where('status',1)
-                ->limit(8)
-                ->get();
-        } else {
-            $list_category = json_decode(base64_decode($post->list_category));
-        }
+		
+        $list_category = json_decode(base64_decode($post->list_category)) ?? [];
         $admin_bar = route('admin.posts.edit', $post->id);
         return view('Default::web.post.show', compact('post', 'list_category', 'category', 'breadcrumb', 'admin_bar','config_post', 'post_news','related_posts','personnels'));
 	}

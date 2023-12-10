@@ -41,36 +41,8 @@ class HomeController extends Controller
 			    ->get();
 		}
 
-        $arboards = StudyAbroad::where('status', 1)
-		    ->select('study_abroads.*')
-        	->leftJoin('pins', function ($join) {
-		        $join->on('pins.type_id','=','study_abroads.id');
-		        $join->on('pins.type',DB::raw("'study_abroads'"));
-		        $join->on('pins.place',DB::raw("'category_study_abroad'"));
-		    })
-		    ->addSelect(DB::raw('(case when pins.value is null then 2147483647 else pins.value end) as pin_home'))
-		    ->where('status', 1)
-		    ->where('pins.place', 'category_study_abroad')
-		    ->orderBy('pin_home', 'ASC')
-			->paginate(6);
-
-		if(!isset($arboards) || count($arboards) == 0) {
-			$arboards = StudyAbroad::select('study_abroads.*')
-			    ->orderBy('id', 'desc')
-			    ->paginate(6);
-		}
-		if($request->ajax()) {
-            $page = $request->page ?? 0;
-            $html =view('Default::mobile.layouts.nation_list',['arboards' => $arboards])->render();
-            return [
-                'status' => 1,
-                'is_hide_more'=> $arboards->currentPage() >= $arboards->lastPage(),
-                'html' => $html,
-            ];
-        }
-
 		return view('Default::mobile.home', compact(
-			'meta_seo', 'admin_bar','slides', 'setting_home', 'posts', 'arboards'
+			'meta_seo', 'admin_bar','slides', 'setting_home', 'posts'
 		));
 	}
 
