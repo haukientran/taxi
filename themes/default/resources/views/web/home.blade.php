@@ -77,22 +77,25 @@
     @endif
     @if(isset($setting_home['contidion']['title']) && count($setting_home['contidion']['title']) > 0)
     <section id="contidion">
-        <h2 class="section-title contidion-title">{{ isset($setting_home['contidion_title']) ? $setting_home['contidion_title'] : 'Điều kiện tham gia chương trình' }}</h2>
-        <div class="contidion-list">
-            @foreach($setting_home['contidion']['title'] as $k => $condition)
-            <div class="contidion-item">
-                <div class="contidion-item__thumbnail">
-                    @include('Default::general.components.image', [
-                        'src' => resizeWImage(isset($setting_home['contidion']['image'][$k]) ? $setting_home['contidion']['image'][$k] : '' , 'w100'),
-                        'width' => '100',
-                        'height' => '100',
-                        "lazy"   => true,
-                        'title'  =>  'khoa-hoc-ke-toan-tong-hop-1'
-                    ])
+        <div class="container">
+            <h2 class="section-title contidion-title">{{ isset($setting_home['contidion_title']) ? $setting_home['contidion_title'] : 'Điều kiện tham gia chương trình' }}</h2>
+            <div class="contidion-list w-100">
+                @foreach($setting_home['contidion']['title'] as $k => $condition)
+                <div class="contidion-item">
+                    <div class="contidion-item__thumbnail">
+                        @include('Default::general.components.image', [
+                            'src' => resizeWImage(isset($setting_home['contidion']['image'][$k]) ? $setting_home['contidion']['image'][$k] : '' , 'w300'),
+                            'width' => '300',
+                            'height' => '300',
+                            "lazy"   => true,
+                            'title'  =>  'khoa-hoc-ke-toan-tong-hop-1'
+                        ])
+                    </div>
+                    <div class="contidion-item__content">{{ $condition ?? '' }}</div>
+                    <a href="{{ isset($setting_home['contidion']['link'][$k]) ? $setting_home['contidion']['link'][$k] : '' }}" class="btn btn-primary contidion-btn" aria-label="Xem chi tiết" title="Xem chi tiết">Xem chi tiết</a>
                 </div>
-                <div class="contidion-item__content">{{ $condition ?? '' }}</div>
+                @endforeach
             </div>
-            @endforeach
         </div>
     </section>
     @endif

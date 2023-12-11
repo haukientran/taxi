@@ -188,7 +188,7 @@ class SettingController extends AdminController
         $form->endCard();
 
         $form->card('col-lg-12');
-            $form->title('Cấu hình vì sao nên chọn du học lê ánh');
+            $form->title('Cấu hình vì sao nên chọn chúng tôi');
             $form->text('should_choose_title', $data['should_choose_title'] ?? '', 0, 'Tiêu đề hiển thị','', true);
             $form->custom('Form::custom.form_custom', [
                 'has_full' => false,
@@ -214,7 +214,7 @@ class SettingController extends AdminController
             $form->text('news_title', $data['news_title'] ?? '', 0, 'Tiêu đề hiển thị','', true);
         $form->endCard();
         $form->card('col-lg-12');
-            $form->title('Cấu hình điều kiện tham gia chương trình');
+            $form->title('Cấu hình dịch vụ');
             $form->text('contidion_title', $data['contidion_title'] ?? '', 0, 'Tiêu đề hiển thị','', true);
             $form->custom('Form::custom.form_custom', [
                 'has_full' => false,
@@ -222,7 +222,8 @@ class SettingController extends AdminController
                 'value' => $data['contidion'] ?? [],
                 'label' => 'Danh sách cấu hình',
                 'generate' => [
-                    [ 'type' => 'image', 'name' => 'image', 'size' => 'Chọn ảnh có kích thước '.'570x400', ],
+                    [ 'type' => 'image', 'name' => 'image', 'size' => 'Chọn ảnh có kích thước '.'300x300', ],
+                    [ 'type' => 'text', 'name' => 'link', 'placeholder' => 'Thêm link ', ],
                     [ 'type' => 'custom', 'generate' => [
                             [ 'type' => 'text', 'name' => 'title', 'placeholder' => 'Tiêu đề', ],
                         ]

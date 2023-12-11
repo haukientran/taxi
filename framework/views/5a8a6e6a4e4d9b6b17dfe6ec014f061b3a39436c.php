@@ -76,22 +76,25 @@
     <?php endif; ?>
     <?php if(isset($setting_home['contidion']['title']) && count($setting_home['contidion']['title']) > 0): ?>
     <section id="contidion">
-        <h2 class="section-title contidion-title"><?php echo e(isset($setting_home['contidion_title']) ? $setting_home['contidion_title'] : 'Điều kiện tham gia chương trình'); ?></h2>
-        <div class="contidion-list">
-            <?php $__currentLoopData = $setting_home['contidion']['title']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $k => $condition): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-            <div class="contidion-item">
-                <div class="contidion-item__thumbnail">
-                    <?php echo $__env->make('Default::general.components.image', [
-                        'src' => resizeWImage(isset($setting_home['contidion']['image'][$k]) ? $setting_home['contidion']['image'][$k] : '' , 'w100'),
-                        'width' => '100',
-                        'height' => '100',
-                        "lazy"   => true,
-                        'title'  =>  'khoa-hoc-ke-toan-tong-hop-1'
-                    ], \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+        <div class="container">
+            <h2 class="section-title contidion-title"><?php echo e(isset($setting_home['contidion_title']) ? $setting_home['contidion_title'] : 'Điều kiện tham gia chương trình'); ?></h2>
+            <div class="contidion-list w-100">
+                <?php $__currentLoopData = $setting_home['contidion']['title']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $k => $condition): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                <div class="contidion-item">
+                    <div class="contidion-item__thumbnail">
+                        <?php echo $__env->make('Default::general.components.image', [
+                            'src' => resizeWImage(isset($setting_home['contidion']['image'][$k]) ? $setting_home['contidion']['image'][$k] : '' , 'w300'),
+                            'width' => '300',
+                            'height' => '300',
+                            "lazy"   => true,
+                            'title'  =>  'khoa-hoc-ke-toan-tong-hop-1'
+                        ], \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+                    </div>
+                    <div class="contidion-item__content"><?php echo e($condition ?? ''); ?></div>
+                    <a href="<?php echo e(isset($setting_home['contidion']['link'][$k]) ? $setting_home['contidion']['link'][$k] : ''); ?>" class="btn btn-primary contidion-btn" aria-label="Xem chi tiết" title="Xem chi tiết">Xem chi tiết</a>
                 </div>
-                <div class="contidion-item__content"><?php echo e($condition ?? ''); ?></div>
+                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
             </div>
-            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
         </div>
     </section>
     <?php endif; ?>
