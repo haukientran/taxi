@@ -2233,6 +2233,21 @@ footer .footer-bottom-container {
   justify-content: space-between;
   align-items: center;
 }
+footer .contact {
+  position: fixed;
+  right: 0;
+  bottom: 30px;
+  display: flex;
+  flex-direction: column;
+}
+footer .contact-item__thumbnail {
+  border-radius: 50px;
+  padding: 10px;
+  width: 80px;
+  height: 80px;
+  z-index: 99;
+  animation: phone-vr-circle-fill 1s infinite ease-in-out;
+}
 footer .footer-taskbar {
   position: fixed;
   z-index: 999;

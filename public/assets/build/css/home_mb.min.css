@@ -147,21 +147,21 @@
   margin-top: 18px;
   padding: 0;
   line-height: 52px;
-  background-color: #E0242A;
+  background-color: #00a551;
 }
 #nation .nation-see-more {
   display: block;
   margin-top: 45px;
   margin-bottom: 25px;
   text-align: center;
-  color: #E0242A;
+  color: #00a551;
   text-decoration: none;
   font-size: 20px;
   font-weight: 700;
 }
 
 #contidion {
-  background-color: #E0242A;
+  background-color: #00a551;
   width: 100%;
   padding: 35px 0px;
   color: #fff;
@@ -186,8 +186,8 @@
   flex: 1;
 }
 #contidion .contidion-item__thumbnail {
-  width: 75px;
-  height: 75px;
+  width: 300px;
+  height: 300px;
   margin-bottom: 24px;
 }
 #contidion .contidion-item__thumbnail img {
@@ -197,6 +197,14 @@
 #contidion .contidion-item__content {
   font-size: 18px;
   line-height: 24px;
+}
+#contidion .contidion-item .contidion-btn {
+  width: 150px;
+  color: #00a551;
+  margin-top: 10px;
+  background-color: #fff;
+  padding: 10px 20px;
+  border: 1px solid #fff;
 }
 
 .pagination {

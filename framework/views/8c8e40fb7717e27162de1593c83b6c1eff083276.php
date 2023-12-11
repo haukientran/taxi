@@ -55,14 +55,15 @@
 	            <div class="contidion-item item" data-thumnail="">
 	                <div class="contidion-item__thumbnail">
                         <?php echo $__env->make('Default::general.components.image', [
-                            'src' => resizeWImage(isset($setting_home['contidion']['image'][$k]) ? $setting_home['contidion']['image'][$k] : '' , 'w100'),
-                            'width' => '100',
-                            'height' => '100',
+                            'src' => resizeWImage(isset($setting_home['contidion']['image'][$k]) ? $setting_home['contidion']['image'][$k] : '' , 'w300'),
+                            'width' => '300',
+                            'height' => '300',
                             "lazy"   => true,
                             'title'  =>  'khoa-hoc-ke-toan-tong-hop-1'
                         ], \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 	                </div>
 	                <div class="contidion-item__content"><?php echo e($condition ?? ''); ?></div>
+                    <a href="<?php echo e(isset($setting_home['contidion']['link'][$k]) ? $setting_home['contidion']['link'][$k] : ''); ?>" class="btn btn-primary contidion-btn" aria-label="Xem chi tiết" title="Xem chi tiết">Xem chi tiết</a>
 	            </div>
 	            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 	        </div>

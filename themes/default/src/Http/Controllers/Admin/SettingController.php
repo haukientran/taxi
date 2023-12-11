@@ -116,6 +116,19 @@ class SettingController extends AdminController
         $form->endCard();
 
         $form->card('col-lg-12');
+            $form->title('Cấu hình các nút liên hệ');
+            $form->custom('Form::custom.form_custom', [
+                'has_full' => false,
+                'name' => 'contact',
+                'value' => $data['contact'] ?? [],
+                'label' => 'Thêm danh sách nút liên hệ (kích thước ảnh 80x80)',
+                'generate' => [
+                    [ 'type' => 'image', 'name' => 'contact_image', 'placeholder' => 'Thêm hình ảnh'],
+                    [ 'type' => 'text', 'name' => 'contact_link', 'placeholder' => 'Thêm link liên kết'],
+                ],
+            ]);
+        $form->endCard();
+        $form->card('col-lg-12');
             $form->title('Cấu hình Footer taskbar mobile');
             $form->custom('Form::custom.form_custom', [
                 'has_full' => false,
@@ -128,7 +141,9 @@ class SettingController extends AdminController
                 ],
             ]);
             $form->textarea('taskbar_link_messenger', $data['taskbar_link_messenger'] ?? '', 0, 'Cấu hình link messenger facebook', '', 5,true);
+
         $form->endCard();
+
         $form->action('editconfig');
         // Hiển thị form tại view
         return $form->render('custom', compact(
@@ -318,7 +333,7 @@ class SettingController extends AdminController
             $form->text('story_title', $data['story_title'] ?? '', 0, 'Tiêu đề','Thêm <br> để xuống dòng', true);
             $form->text('story_des', $data['story_des'] ?? '', 0, 'Mô tả','Thêm <br> để xuống dòng', true);
             $form->editor('story_detail', $data['story_detail']??'', 0, 'Thêm nội dung phần box đội ngũ', true);
-            $form->image('story_image', $data['story_image'] ?? '', 0, 'Hình ảnh hiển thị bên phải', 'Chọn ảnh','Nên thêm ảnh có kích thước 600x800', true);
+            $form->image('story_image', $data['story_image'] ?? '', 0, 'Hình ảnh hiển thị bên phải', 'Chọn ảnh','Nên thêm footerảnh có kích thước 600x800', true);
         $form->title('Cấu hình thành tựu');
             $form->image('achievement_banner', $data['achievement_banner'] ?? '', 0, 'Backgroup banner câu thành tựu', 'Chọn ảnh','Nên thêm ảnh có kích thước 1920x800', true);
             $form->text('achievement_title', $data['achievement_title'] ?? '', 0, 'Tiêu đề','Thêm <br> để xuống dòng', true);

@@ -79,6 +79,15 @@
                 </div>
             </div>
         </div>
+        <?php if(isset($config_general['contact']['contact_link']) && count($config_general['contact']['contact_link']) > 0): ?>)
+        <div class="contact">
+            <?php $__currentLoopData = $config_general['contact']['contact_link']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $key => $link): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+            <a href="<?php echo e($link ?? ''); ?>" class="contact-item" type="button">
+                <img class="contact-item__thumbnail" src="<?php echo e($config_general['contact']['contact_image'][$key] ?? ''); ?>">
+            </a>
+            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+        </div>
+        <?php endif; ?>
     <div class="footer-bottom">
         <div class="container footer-bottom-container">
             <div class="footer-bottom-copyright text-center"><?php echo e($config_general['copy_right'] ?? ''); ?></div>
