@@ -114,7 +114,7 @@ class SettingController extends AdminController
             $form->textarea('link_bct', $data['link_bct'] ?? '', 0, 'Link bộ công thương', '', 5,true);
             $form->textarea('copy_right', $data['copy_right'] ?? '', 0, 'Copy right', '', 5,true);
             $form->text('about_title', $data['about_title'] ?? '', 0, 'Tiêu đề về chúng tôi', $data['about_title'] ?? '', true);
-            $form->text('about_description', $data['about_description'] ?? '', 0, 'Mô tả về chúng tôi',$data['about_description'] ?? '',  true);
+            $form->textarea('about_description', $data['about_description'] ?? '', 0, 'Mô tả về chúng tôi', '', 5,true);
         $form->endCard();
 
         $form->card('col-lg-12');

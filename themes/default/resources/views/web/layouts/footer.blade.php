@@ -54,9 +54,9 @@
                         $count_social_item_link = count($config_general['social']['social_item_link'] ?? []);
                     @endphp
                     <div class="footer-item__group">
-                        <div class="footer-item__title lh-35 fs-18 f-w-b text-up">{{ isset($about_title) ? about_title : 'Về chúng tôi'}}</div>
+                        <div class="footer-item__title lh-35 fs-18 f-w-b text-up">{{ isset($config_general['about_title']) ? $config_general['about_title'] : 'Về chúng tôi'}}</div>
                         <div class="footer-item__description">
-                            {{ isset($about_title) ? about_description : '' }}
+                            {{ isset($about_description) ? $about_description : '' }}
                         </div>
                         <div class="footer-item__icon">
                             @if(isset($config_general['social']['social_item_link']) && count($config_general['social']['social_item_link']) > 0)
