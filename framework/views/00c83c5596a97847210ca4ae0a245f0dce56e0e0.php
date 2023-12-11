@@ -57,7 +57,11 @@
                         $count_social_item_link = count($config_general['social']['social_item_link'] ?? []);
                     ?>
                     <div class="footer-item__group">
-                        <div class="footer-item__title lh-35 fs-18 f-w-b text-up">Liên hệ với chúng tôi</div>
+                        <div class="footer-item__title lh-35 fs-18 f-w-b text-up"><?php echo e(isset($about_title) ? about_title : 'Về chúng tôi'); ?></div>
+                        <div class="footer-item__description">
+                            <?php echo e(isset($about_title) ? about_description : ''); ?>
+
+                        </div>
                         <div class="footer-item__icon">
                             <?php if(isset($config_general['social']['social_item_link']) && count($config_general['social']['social_item_link']) > 0): ?>
                                 <?php $__currentLoopData = $config_general['social']['social_item_link']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $k => $link): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
