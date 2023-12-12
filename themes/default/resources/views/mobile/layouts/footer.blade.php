@@ -59,7 +59,7 @@
                             @if(isset($config_general['social']['social_item_link']) && count($config_general['social']['social_item_link']) > 0)
                                 @foreach($config_general['social']['social_item_link'] as $k => $link)
                                 <div class="icon-item">
-                                    <p>{{ $about_description ?? ''}}</p>
+                                    <p>{{ isset($config_general['about_description']) ? $config_general['about_description'] : ''}}</p>
                                     <a target="_blank" class="block" href="{{ $link ?? '#' }}" aria-label="{{ $config_general['social']['social_item_title'][$k] ?? '' }}" rel="nofollow">
                                         @include('Default::general.components.image', [
                                             'src' =>  getImage($config_general['social']['social_item_image'][$k] ?? ''),
