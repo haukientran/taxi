@@ -62,7 +62,7 @@
                             <?php if(isset($config_general['social']['social_item_link']) && count($config_general['social']['social_item_link']) > 0): ?>
                                 <?php $__currentLoopData = $config_general['social']['social_item_link']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $k => $link): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                 <div class="icon-item">
-                                    <p><?php echo e($about_description ?? ''); ?></p>
+                                    <p><?php echo e(isset($config_general['about_description']) ? $config_general['about_description'] : ''); ?></p>
                                     <a target="_blank" class="block" href="<?php echo e($link ?? '#'); ?>" aria-label="<?php echo e($config_general['social']['social_item_title'][$k] ?? ''); ?>" rel="nofollow">
                                         <?php echo $__env->make('Default::general.components.image', [
                                             'src' =>  getImage($config_general['social']['social_item_image'][$k] ?? ''),
@@ -80,7 +80,7 @@
                 </div>
             </div>
         </div>
-        <?php if(isset($config_general['contact']['contact_link']) && count($config_general['contact']['contact_link']) > 0): ?>)
+        <?php if(isset($config_general['contact']['contact_link']) && count($config_general['contact']['contact_link']) > 0): ?>
         <div class="contact">
             <?php $__currentLoopData = $config_general['contact']['contact_link']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $key => $link): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
             <a href="<?php echo e($link ?? ''); ?>" class="contact-item" type="button">

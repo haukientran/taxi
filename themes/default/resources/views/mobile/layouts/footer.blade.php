@@ -77,7 +77,7 @@
                 </div>
             </div>
         </div>
-        @if(isset($config_general['contact']['contact_link']) && count($config_general['contact']['contact_link']) > 0))
+        @if(isset($config_general['contact']['contact_link']) && count($config_general['contact']['contact_link']) > 0)
         <div class="contact">
             @foreach($config_general['contact']['contact_link'] as $key => $link)
             <a href="{{ $link ?? ''}}" class="contact-item" type="button">

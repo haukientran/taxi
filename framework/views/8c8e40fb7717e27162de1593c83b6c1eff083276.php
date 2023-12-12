@@ -31,6 +31,58 @@
     </section>
     <?php echo $__env->make('Default::mobile.layouts.should-choose_home', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
     <?php echo $__env->make('Default::mobile.layouts.register', ['title' => isset($setting_home['register_title']) ? $setting_home['register_title'] : 'ĐĂNG KÝ TƯ VẤN MIỄN PHÍ'], \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+     <section id="table_price" class="w-100 mt-20">
+        <div class="container">
+            <div class="table_price col-gird-12 w-100">
+                <div class="table_price-left css-content">
+                    <?php echo ($setting_home['table_price'] ?? ''); ?>
+
+                    <a href="tel:<?php echo e($config_general['hotline_support'] ?? ''); ?>" class="btn btn-primary btn-book color_white mt-10 lh-40 text-up fs-16 f-w-b" aria-label="Đặt xe" title="Đặt xe">Đặt xe: <?php echo e($config_general['hotline_support'] ?? ''); ?></a>
+                </div>
+                <div class="table_price-right mt-20">
+                    <?php echo $__env->make('Default::general.components.image', [
+                        'src' => resizeWImage( $setting_home['table_price_banner']  ?? '', 'w600'),
+                        'width' => '585',
+                        'height' => '325',
+                        'lazy'   => true,
+                        'title'  =>  getAlt($setting_home['table_price_banner']  ?? '')
+                    ], \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="service_price" class="service_price">
+        <div class="container">
+            <div class="service_price__introduce css-content">
+                <?php echo ($setting_home['introduce_service'] ?? ''); ?>
+
+            </div>
+            <?php if(isset($setting_home['service_price']['title']) && count($setting_home['service_price']['title']) > 0): ?>
+            <div class="service_price__list col-gird-12 w-100">
+                <?php $__currentLoopData = $setting_home['service_price']['title']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $k => $title): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                <div class="item mt-20">
+                    <div class="item-thumbnail">
+                        <?php echo $__env->make('Default::general.components.image', [
+                            'src' => resizeWImage(isset($setting_home['service_price']['image'][$k]) ? $setting_home['service_price']['image'][$k] : '' , 'w500'),
+                            'width' => '500',
+                            'height' => '300',
+                            "lazy"   => true,
+                        ], \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+                    </div>
+                    <div class="item-detail text-center">
+                        <div class="item-content fs-20 f-w-b text-up mb-30"><?php echo e($title ?? ''); ?></div>
+                        <div class="item-description mt-10 f-w-b fs-16"><?php echo e(isset($setting_home['service_price']['description_price1'][$k]) ? $setting_home['service_price']['description_price1'][$k] : ''); ?></div>
+                        <div class="item-description mt-10 f-w-b fs-16 mb-20"><?php echo e(isset($setting_home['service_price']['description_price2'][$k]) ? $setting_home['service_price']['description_price2'][$k] : ''); ?></div>
+                        <a href="tel:<?php echo e($config_general['hotline_support'] ?? ''); ?>" class="btn btn-primary contidion-btn mt-10 w-100 lh-50 text-up fs-16 f-w-b" aria-label="Xem chi tiết" title="Xem chi tiết">Đặt xe</a>
+                    </div>
+                </div>
+                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+            </div>
+            <?php endif; ?>
+        </div>
+    </section>
+
     <?php if(isset($arboards) && count($arboards) > 0): ?>
     <section id="nation">
         <div class="container">
@@ -70,6 +122,7 @@
         </div>
     </section>
     <?php endif; ?>
+    <?php echo $__env->make('Default::mobile.layouts.service_grid3', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
     <?php echo $__env->make('Default::mobile.layouts.feedback_home', ['title' => isset($setting_home['feedback_title']) ? $setting_home['feedback_title'] : 'Chia sẻ từ học viên Lê Ánh'], \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
     <?php echo $__env->make('Default::mobile.layouts.list_image_home',['title'=> isset($setting_home['activity_title']) ? $setting_home['activity_title'] : 'Hoạt động tại Lê ánh' ], \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
     <?php echo $__env->make('Default::mobile.layouts.evaluate', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
@@ -105,6 +158,7 @@
         </div>
     </section>
     <?php endif; ?>
+    <?php echo $__env->make('Default::mobile.layouts.should-choose-grid2', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 </main>
 <?php $__env->stopSection(); ?>
 <?php $__env->startSection('foot'); ?>
