@@ -249,6 +249,13 @@ class SettingController extends AdminController
             $form->title('Cấu hình Tin tức sự kiện');
             $form->text('news_title', $data['news_title'] ?? '', 0, 'Tiêu đề hiển thị','', true);
         $form->endCard();
+
+
+        $form->card('col-lg-12');
+            $form->title('Cấu hình bảng giá');
+            $form->editor('table_price', $data['table_price']??'', 0, 'Thêm nội dung phần bảng giá', true);
+        $form->endCard();
+
         $form->card('col-lg-12');
             $form->title('Cấu hình dịch vụ');
             $form->text('contidion_title', $data['contidion_title'] ?? '', 0, 'Tiêu đề hiển thị','', true);

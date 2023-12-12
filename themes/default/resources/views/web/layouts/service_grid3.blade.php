@@ -1,9 +1,8 @@
     @if(isset($setting_home['service_grid3']['title']) && count($setting_home['service_grid3']['title']) > 0)
-    <section id="service_grid3" class="service_grid3">
+    <section id="contidion" class="service_grid3">
         <div class="container">
             <h2 class="section-title contidion-title">{{ isset($setting_home['contidion_title']) ? $setting_home['contidion_title'] : 'Điều kiện tham gia chương trình' }}</h2>
             <div class="contidion-list w-100">
-        <div class="contidion-list s-wrap" id="contidion-list">
                 @foreach($setting_home['service_grid3']['title'] as $k => $service_grid3)
                 <div class="contidion-item">
                     <div class="contidion-item__thumbnail">
