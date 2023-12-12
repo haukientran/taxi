@@ -214,6 +214,9 @@
 .service_grid3 .contidion-title {
   color: #000000 !important;
 }
+.service_grid3 .contidion-item {
+  margin-bottom: 20px;
+}
 
 .pagination {
   display: none;

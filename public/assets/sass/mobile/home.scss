@@ -200,6 +200,9 @@
     }
     background-color: unset!important;
     color: $color_text!important;
+    .contidion-item {
+        margin-bottom: 20px;
+    }
 }
 .pagination {
     display: none;
