@@ -254,6 +254,27 @@ class SettingController extends AdminController
         $form->card('col-lg-12');
             $form->title('Cấu hình bảng giá');
             $form->editor('table_price', $data['table_price']??'', 0, 'Thêm nội dung phần bảng giá', true);
+            $form->image('table_price_banner', $data['table_price_banner'] ?? '', 0, 'Ảnh bảng giá', 'Chọn ảnh','', true);
+        $form->endCard();
+
+        $form->card('col-lg-12');
+            $form->title('Cấu hình giới thiệu xe');
+            $form->editor('introduce_service', $data['introduce_service']??'', 0, 'Thêm nội dung phần bảng giá', true);
+            $form->custom('Form::custom.form_custom', [
+                'has_full' => false,
+                'name' => 'service_price',
+                'value' => $data['service_price'] ?? [],
+                'label' => 'Danh sách cấu hình',
+                'generate' => [
+                    [ 'type' => 'image', 'name' => 'image', 'size' => 'Chọn ảnh có kích thước '.'500x300', ],
+                    [ 'type' => 'custom', 'generate' => [
+                            [ 'type' => 'text', 'name' => 'title', 'placeholder' => 'Tiêu đề', ],
+                            [ 'type' => 'text', 'name' => 'description_price1', 'placeholder' => 'Mô tả', ],
+                            [ 'type' => 'text', 'name' => 'description_price2', 'placeholder' => 'Nhập mô tả'],
+                        ]
+                    ],
+                ],
+            ]);
         $form->endCard();
 
         $form->card('col-lg-12');
