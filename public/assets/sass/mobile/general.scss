@@ -322,7 +322,7 @@ main {
     display: block;
     position: relative;
     width: 100%;
-    color: #ae1f2b;
+    color: $color_main;
     line-height: 30px;
 }
 #blog {
@@ -369,7 +369,7 @@ main {
             width: 58px;
             height: 2px;
             content: '';
-            background-color: #DF2127;
+            background-color: $color_main;
             position: absolute;
             right: -68px;
             top: 50%;
@@ -528,7 +528,7 @@ main {
                 width: 40px;
                 height: 3px;
                 content: '';
-                background-color: #DF2127;
+                background-color: $color_main;
                 position: absolute;
                 left: 0;
                 bottom: -16px;
@@ -537,6 +537,25 @@ main {
         &__desc {
             font-size: 14px;
             line-height: 20px;
+        }
+    }
+}
+
+.should_choose_grid2 {
+    .should-choose {
+        &-item {
+            &__thumbnail {
+                flex: 0 0 80px;
+                margin-right: 15px;
+                max-width: 80px;
+            }
+            &__content {
+                flex: 0 0 calc(100% - 80px - 15px);
+            }
+            &__title {
+                text-align: left;
+                font-weight: 700;
+            }
         }
     }
 }
@@ -1077,7 +1096,7 @@ footer {
             width: 58px;
             height: 2px;
             content: '';
-            background-color: #DF2127;
+            background-color: $color_main;
             position: absolute;
             right: -68px;
             top: 50%;

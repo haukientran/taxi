@@ -57,6 +57,13 @@ $(document).ready(function() {
             {'maxWidth': 99999999999999, 'minWidth': 0, 'qtyItem': 1, 'nextItem': 1},
         ],
         false ,true, false, 5000, 1, 0, 1, 'data-thumnail');
+    //slide dịch vụ
+    sudoSlide(
+        'service_grid3-list',
+        [
+            {'maxWidth': 99999999999999, 'minWidth': 0, 'qtyItem': 1, 'nextItem': 1},
+        ],
+        false ,true, false, 5000, 1, 0, 1, 'data-thumnail');
     //slide phản hồi học viên
     sudoSlide(
         'feedback-list',

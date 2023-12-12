@@ -40,7 +40,7 @@
     position: relative;
     text-align: center;
     width: 100%;
-    color: #ae1f2b;
+    color: $color_main;
     margin: 15px 0;
     font-size: 18px;
 }
@@ -193,6 +193,13 @@
         }
     }
 
+}
+.service_grid3 {
+    .contidion-title {
+        color: $color_text!important;
+    }
+    background-color: unset!important;
+    color: $color_text!important;
 }
 .pagination {
     display: none;

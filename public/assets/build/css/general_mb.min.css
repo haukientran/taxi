@@ -1834,7 +1834,7 @@ main {
   display: block;
   position: relative;
   width: 100%;
-  color: #ae1f2b;
+  color: #00a551;
   line-height: 30px;
 }
 
@@ -1883,7 +1883,7 @@ main {
   width: 58px;
   height: 2px;
   content: "";
-  background-color: #DF2127;
+  background-color: #00a551;
   position: absolute;
   right: -68px;
   top: 50%;
@@ -2048,7 +2048,7 @@ main {
   width: 40px;
   height: 3px;
   content: "";
-  background-color: #DF2127;
+  background-color: #00a551;
   position: absolute;
   left: 0;
   bottom: -16px;
@@ -2056,6 +2056,19 @@ main {
 .should-choose-item__desc {
   font-size: 14px;
   line-height: 20px;
+}
+
+.should_choose_grid2 .should-choose-item__thumbnail {
+  flex: 0 0 80px;
+  margin-right: 15px;
+  max-width: 80px;
+}
+.should_choose_grid2 .should-choose-item__content {
+  flex: 0 0 calc(100% - 80px - 15px);
+}
+.should_choose_grid2 .should-choose-item__title {
+  text-align: left;
+  font-weight: 700;
 }
 
 .member-item__top {
@@ -2569,7 +2582,7 @@ footer .footer-taskbar #call li a {
   width: 58px;
   height: 2px;
   content: "";
-  background-color: #DF2127;
+  background-color: #00a551;
   position: absolute;
   right: -68px;
   top: 50%;

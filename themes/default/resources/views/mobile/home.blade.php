@@ -71,6 +71,7 @@
         </div>
     </section>
     @endif
+    @include('Default::mobile.layouts.service_grid3')
     @include('Default::mobile.layouts.feedback_home', ['title' => isset($setting_home['feedback_title']) ? $setting_home['feedback_title'] : 'Chia sẻ từ học viên Lê Ánh'])
     @include('Default::mobile.layouts.list_image_home',['title'=> isset($setting_home['activity_title']) ? $setting_home['activity_title'] : 'Hoạt động tại Lê ánh' ])
     @include('Default::mobile.layouts.evaluate')
@@ -106,6 +107,7 @@
         </div>
     </section>
     @endif
+    @include('Default::mobile.layouts.should-choose-grid2')
 </main>
 @endsection
 @section('foot')
