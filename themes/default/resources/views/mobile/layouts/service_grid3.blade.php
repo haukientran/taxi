@@ -1,6 +1,6 @@
     @if(isset($setting_home['service_grid3']['title']) && count($setting_home['service_grid3']['title']) > 0)
     <section id="contidion" class="service_grid3">
-        <h2 class="section-title contidion-title">{{ isset($setting_home['service_grid3_title']) ? $setting_home['service_grid3_title'] : 'Điều kiện tham gia chương trình' }}</h2>
+        <h2 class="section-title contidion-title">{{ isset($setting_home['service_grid3_title']) ? $setting_home['service_grid3_title'] : 'Dịch vụ của chúng tôi' }}</h2>
         <div class="contidion-list flex" id="service_grid3-list">
                 @foreach($setting_home['service_grid3']['title'] as $k => $service_grid3)
                 <div class="contidion-item item" data-thumnail="">
