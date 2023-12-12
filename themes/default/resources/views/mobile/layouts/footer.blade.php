@@ -55,6 +55,7 @@
                     @endphp
                     <div class="footer-item__group">
                         <div class="footer-item__title lh-35 fs-18 f-w-b text-up color_white">{{ isset($config_general['about_title']) ? $config_general['about_title'] : 'Về chúng tôi'}}</div>
+                        
                         <div class="footer-item__description color_white">
                             {{ isset($config_general['about_description']) ? $config_general['about_description'] : '' }}
                         </div>
