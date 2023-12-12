@@ -214,6 +214,13 @@
         }
     }
 }
+.service_grid3 {
+    .contidion-title {
+        color: $color_text!important;
+    }
+    background-color: unset!important;
+    color: $color_text!important;
+}
 .pagination {
     display: none;
 }

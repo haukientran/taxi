@@ -802,6 +802,25 @@ main {
         }
     }
 }
+.should_choose_grid2 {
+    background-color: red;
+    .should-choose {
+        &-item {
+            &__thumbnail {
+                flex: 0 0 80px;
+                margin-right: 15px;
+                max-width: 80px;
+            }
+            &__content {
+                flex: 0 0 calc(100% - 80px - 15px);
+            }
+            &__title {
+                text-align: left;
+                font-weight: 700;
+            }
+        }
+    }
+}
 .member-item {
     &__top {
         margin: 0 auto;

@@ -92,13 +92,14 @@
                         ])
                     </div>
                     <div class="contidion-item__content">{{ $condition ?? '' }}</div>
-                    <a href="{{ isset($setting_home['contidion']['link'][$k]) ? $setting_home['contidion']['link'][$k] : '' }}" class="btn btn-primary contidion-btn" aria-label="Xem chi tiết" title="Xem chi tiết">Xem chi tiết</a>
+                    <a href="{{ isset($setting_home['contidion']['link'][$k]) ? $setting_home['contidion']['link'][$k] : '' }}" class="btn btn-primary contidion-btn" aria-label="Xem chi tiết" title="Xem chi tiết">Đăng ký</a>
                 </div>
                 @endforeach
             </div>
         </div>
     </section>
     @endif
+    @include('Default::web.layouts.service_grid3')
     @include('Default::web.layouts.evaluate')
     @include('Default::web.layouts.feedback_home', ['title' => isset($setting_home['feedback_title']) ? $setting_home['feedback_title'] : 'Chia sẻ từ học viên Lê Ánh'])
     @include('Default::web.layouts.list_image_home',['title'=> isset($setting_home['activity_title']) ? $setting_home['activity_title'] : 'Hoạt động tại Lê ánh' ])
@@ -134,6 +135,8 @@
         </div>
     </section>
     @endif
+
+    @include('Default::web.layouts.should-choose-grid2')
 </main>
 @endsection
 @section('foot')

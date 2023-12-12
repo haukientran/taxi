@@ -2265,6 +2265,22 @@ main {
   line-height: 20px;
 }
 
+.should_choose_grid2 {
+  background-color: red;
+}
+.should_choose_grid2 .should-choose-item__thumbnail {
+  flex: 0 0 80px;
+  margin-right: 15px;
+  max-width: 80px;
+}
+.should_choose_grid2 .should-choose-item__content {
+  flex: 0 0 calc(100% - 80px - 15px);
+}
+.should_choose_grid2 .should-choose-item__title {
+  text-align: left;
+  font-weight: 700;
+}
+
 .member-item__top {
   margin: 0 auto;
   position: relative;

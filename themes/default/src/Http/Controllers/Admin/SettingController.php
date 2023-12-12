@@ -196,7 +196,7 @@ class SettingController extends AdminController
             $form->image('meta_image', $data['meta_image'] ?? '', 0, 'Meta Image', 'Chọn ảnh','', true);
         $form->endCard();
         $form->card('col-lg-12');
-            $form->title('Cấu hình giới thiệu Lê Ánh');
+            $form->title('Cấu hình giới thiệu');
             $form->text('reason_title', $data['reason_title'] ?? '', 0, 'Tiêu đề','', true);
             $form->textarea('reason_description', $data['reason_description'] ?? '', 0, 'Mô tả', '', 5,true);
             $form->text('reason_link', $data['reason_link'] ?? '', 0, 'Link xem thêm','Link xem thêm', true);
@@ -211,6 +211,25 @@ class SettingController extends AdminController
                 'has_full' => false,
                 'name' => 'should_choose',
                 'value' => $data['should_choose'] ?? [],
+                'label' => 'Danh sách cấu hình',
+                'generate' => [
+                    [ 'type' => 'image', 'name' => 'image', 'size' => 'Chọn ảnh có kích thước '.'50x50', ],
+                    [ 'type' => 'custom', 'generate' => [
+                            [ 'type' => 'text', 'name' => 'title', 'placeholder' => 'Tiêu đề', ],
+                            [ 'type' => 'text', 'name' => 'description', 'placeholder' => 'Mô tả', ],
+                        ]
+                    ],
+                ],
+            ]);
+        $form->endCard();
+
+        $form->card('col-lg-12');
+            $form->title('Cấu hình vì sao nên chọn chúng tôi(2 cột/1 dòng)');
+            $form->text('should_choose_grid2_title', $data['should_choose_grid2_title'] ?? '', 0, 'Tiêu đề hiển thị','', true);
+            $form->custom('Form::custom.form_custom', [
+                'has_full' => false,
+                'name' => 'should_choose_grid2',
+                'value' => $data['should_choose_grid2'] ?? [],
                 'label' => 'Danh sách cấu hình',
                 'generate' => [
                     [ 'type' => 'image', 'name' => 'image', 'size' => 'Chọn ảnh có kích thước '.'50x50', ],
@@ -249,6 +268,25 @@ class SettingController extends AdminController
             ]);
         $form->endCard();
         $form->card('col-lg-12');
+            $form->title('Cấu hình dịch vụ(grid3)');
+            $form->text('service_grid3_title', $data['service_grid3_title'] ?? '', 0, 'Tiêu đề hiển thị','', true);
+            $form->custom('Form::custom.form_custom', [
+                'has_full' => false,
+                'name' => 'service_grid3',
+                'value' => $data['service_grid3'] ?? [],
+                'label' => 'Danh sách cấu hình',
+                'generate' => [
+                    [ 'type' => 'image', 'name' => 'image', 'size' => 'Chọn ảnh có kích thước '.'300x300', ],
+                    [ 'type' => 'text', 'name' => 'link', 'placeholder' => 'Thêm link ', ],
+                    [ 'type' => 'custom', 'generate' => [
+                            [ 'type' => 'text', 'name' => 'title', 'placeholder' => 'Tiêu đề', ],
+                            [ 'type' => 'text', 'name' => 'description', 'placeholder' => 'Nhập mô tả'],
+                        ]
+                    ],
+                ],
+            ]);
+        $form->endCard();
+        $form->card('col-lg-12');
             $form->title('Cấu hình chia sẻ từ học viên');
             $form->text('feedback_title', $data['feedback_title'] ?? '', 0, 'Tiêu đề chia sẻ từ học viên','', true);
             // $form->text('video_youtube_feedback', $data['video_youtube_feedback'] ?? '', 0, 'Thêm link video phản hồi','Thêm link video phản hồi', true);
@@ -268,7 +306,7 @@ class SettingController extends AdminController
             ]);
         $form->endCard();
         $form->card('col-lg-12');
-            $form->title('Cấu hình hoạt động tại Lê Ánh');
+            $form->title('Cấu hình hoạt động');
             $form->text('activity_title', $data['activity_title'] ?? '', 0, 'Tiêu đề hiển thị','', true);
             $form->custom('Form::custom.form_custom', [
                 'has_full' => false,
