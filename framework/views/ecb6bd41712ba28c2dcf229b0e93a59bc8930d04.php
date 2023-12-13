@@ -39,77 +39,6 @@
 				</ul>
 			</div>
 			<span style="font-size: 18px; font-weight: 600; display: block; margin: 20px 0;">Dưới đây là ví dụ 1 số module, các module còn lại xử lý tương tự</span>
-			<div class="dashboard__content--product module">
-				<div class="product">
-					<div class="module__title product__title">
-						<span><?php echo e(__('Module Ecommerce')); ?></span>
-					</div>
-					<div class="product__content module__content">
-						<div class="module__content--title">
-							<span class="title"><?php echo e(__('Để tạo sản phẩm cần làm theo các bước sau:')); ?></span>
-							<ul class="steps">
-								<li><?php echo e(__('Bước 1: Tạo danh mục sản phẩm')); ?></li>
-								<li><?php echo e(__('Bước 2: Tạo thương hiệu')); ?></li>
-								<li><?php echo e(__('Bước 3: Tạo bộ lọc')); ?></li>
-								<li><?php echo e(__('Bước 4: Tạo sản phẩm')); ?></li>
-							</ul>
-							<span class="title"><?php echo e(__('1. Tạo danh mục sản phẩm: Thêm, sửa, xóa danh mục sản phẩm như đã hướng dẫn trên')); ?></span>
-							<ul class="steps">
-								<li><?php echo e(__('Lưu ý khi thêm, sửa: Chọn danh mục cha nếu Danh mục đó có Danh mục cha, không có không phải chọn.')); ?></li>
-								<li><?php echo e(__('Chọn nhóm bộ lọc cho danh mục')); ?></li>
-							</ul>
-							<span class="title"><?php echo e(__('2. Tạo thương hiệu: Thêm, sửa, xóa thương hiệu như đã hướng dẫn trên')); ?></span>
-							<ul></ul>
-							<span class="title"><?php echo e(__('3. Tạo bộ lọc')); ?></span>
-							<ul class="steps">
-								<li><?php echo e(__('1.1 Thêm, Sửa bộ lọc theo nhóm bộ lọc')); ?>
-
-									<ul class="steps__list">
-										<li><?php echo e(__('Click vào bộ lọc, tại đây hiển thị danh sách nhóm bộ lọc; chọn thêm mới để thêm hoặc click vào tên (hoặc nút sửa) để sửa bộ lọc')); ?></li>
-										<li><?php echo e(__('Điền tên nhóm Bộ lọc: (VD: Trọng lượng)')); ?></li>
-										<li><?php echo e(__('Click vào dấu + để thêm nhiều hơn 1 chi tiết bộ lọc (ví dụ: 1kg) cho nhóm bộ lọc , click vào nút thùng rác ở trên góc phải để xóa')); ?></li>
-									</ul>
-								</li>
-								<li><?php echo e(__('1.2 Xóa bộ lọc')); ?>
-
-									<ul class="steps__list">
-										<li><?php echo e(__('Xóa nhóm bộ lọc bằng cách click vào nút xóa tương ứng tại trang danh sách')); ?></li>
-										<li><?php echo e(__('Xóa chi tiết bộ lọc bằng cách vào sửa nhóm bộ lọc và xóa ')); ?></li>
-									</ul>
-								</li>
-							</ul>
-							<span class="title"><?php echo e(__('4. Tạo sản phẩm: Thêm, sửa, xóa sản phẩm như đã hướng dẫn trên')); ?></span>
-							<ul class="steps">
-								<li><?php echo e(__('Một số lưu ý khi nhập các trường thông tin cho sản phẩm: ')); ?>
-
-									<ul>
-										<li><?php echo e(__('Giá thị trường (nếu có) > giá bán')); ?></li>
-										<li><?php echo e(__('Danh mục: Chọn 1 hoặc nhiều danh mục cho sản phẩm')); ?></li>
-										<li><?php echo e(__('Quản lý kho hàng: Tích chọn quản lý kho để nhập số lượng')); ?></li>
-										<li><?php echo e(__('Bộ lọc: chọn bộ lọc tương ứng cho từng sản phẩm')); ?></li>
-									</ul>
-								</li>
-							</ul>
-							<span class="title"><?php echo e(__('Tính năng nhân bản sản phẩm')); ?></span>
-							<ul class="steps">
-								<li><?php echo e(__('Chọn sản phẩm cần nhân bản, click vào nút nhân bản')); ?></li>
-								<li><?php echo e(__('Khi nhân bản thì sẽ lấy tất cả các thông tin của sản phẩm đó, quản trị cần sửa lại đường dẫn để tránh trùng đường dẫn, sửa các thông tin khác (nếu cần) ')); ?></li>
-							</ul>
-							<span class="title"><?php echo e(__('Đơn hàng')); ?></span>
-							<ul class="steps">
-								<li><?php echo e(__('Thống kê toàn bộ đơn hàng')); ?></li>
-								<li><?php echo e(__('Quản trị viên có quyền được xem chi tiết đơn hàng, xóa đơn hàng')); ?></li>
-								<li><?php echo e(__('Vào xem đơn hàng để thay đổi trạng thái đơn hàng và tải thông tin chi tiết đơn')); ?></li>
-							</ul>
-							<span class="title"><?php echo e(__('Khách hàng')); ?></span>
-							<ul class="steps">
-								<li><?php echo e(__('Thống kê khách hàng đã mua hàng trên website')); ?></li>
-								<li><?php echo e(__('Quản trị có quyền thêm, sửa, xóa khách hàng')); ?></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-			</div>
 			<div class="dashboard__content--post module">
 				<div class="module-post">
 					<div class="module__title post__title">
@@ -135,23 +64,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="dashboard__content--link module">
-				<div class="link">
-					<div class="module__title link__title">
-						<span><?php echo e(__('Module link đồng bộ')); ?></span>
-					</div>
-					<div class="link__content module__content">
-						<div class="module__content--title">
-							<span class="title"><?php echo e(__('Đây là module quản lý link đồng bộ')); ?></span>
-							<ul class="steps">
-								<li><?php echo e(__('Những link đã tồn tại trên hệ thống nhưng đã được sửa thì cần điều hướng lại link')); ?></li>
-								<li><?php echo e(__('Liên kết nguồn chính là link cũ, Liên kết đich là link mới')); ?></li>
-								<li><?php echo e(__('Lưu ý khi nhập link: thay domain bằng dấu / (ví dụ: ta có link đầy đủ như sau : http://phukienthethao.vn/blog/preserve.html thì chỉ nhập /blog/preserve.html')); ?></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-			</div>
+			
 			<div class="dashboard__content--slide module">
 				<div class="slide">
 					<div class="module__title slide__title">
@@ -162,31 +75,6 @@
 							<span class="title"><?php echo e(__('Đây là module quản lý Baner slides ở trang chủ')); ?></span>
 							<ul class="steps">
 								<li><?php echo e(__('Thêm, sửa, xóa slide như đã hướng dẫn trên')); ?></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-			</div>
-
-			<div class="dashboard__content--comments module">
-				<div class="comments">
-					<div class="module__title comments__title">
-						<span><?php echo e(__('Module quản lý Bình luận')); ?></span>
-					</div>
-					<div class="comments__content module__content">
-						<div class="module__content--title">
-							<span class="title"><?php echo e(__('Đây là module quản lý bình luận')); ?></span>
-							<ul class="steps">
-								<li><?php echo e(__('Hiển thị các bình luận trên sản phẩm, bài viết')); ?></li>
-								<li><?php echo e(__('Quản trị viên có quyền duyệt bình luận khách hàng')); ?>
-
-									<ul class="steps__list">
-										<li><?php echo e(__('Tại danh sách bình luận QTV có quyền thay đổi trạng thái bình luận: Ẩn hoặc hiện')); ?></li>
-										<li><?php echo e(__('Tất cả các bình luận của khách hàng mặc định đều ở trạng thái Ẩn, khi được QTV thay đổi trạng thái thành Hiện thì bình luận đó mới được hiển thị tại bài viết hoặc sản phẩm mà khách hàng bình luận')); ?></li>
-										<li><?php echo e(__('QTV được quyền sửa bình luận của khách hàng tại nút Sửa hoặc Sửa nhanh trong danh sách bình luận')); ?></li>
-										<li><?php echo e(__('QTV có thể trả lời nhanh bình luận khách hàng tại nút trả lời')); ?></li>
-									</ul>
-								</li>
 							</ul>
 						</div>
 					</div>

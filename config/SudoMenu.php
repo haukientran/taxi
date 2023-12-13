@@ -88,22 +88,22 @@ return [
 	    //         ]
 	    //     ]
 	    // ],
-	    [
-	    	'type' 		=> 'single',
-			'name' 		=> 'Trang đơn',
-			'icon' 		=> 'bx bx-file',
-			'route' 	=> 'admin.pages.index',
-			'role'		=> 'pages_index',
-			'active'    => [ 'admin.pages.create', 'admin.pages.edit' ]
-		],
-		[
-	    	'type' 		=> 'single',
-			'name' 		=> 'Link đồng bộ',
-			'icon' 		=> 'bx bx-link-alt',
-			'route' 	=> 'admin.sync_links.create',
-			'role'		=> 'sync_links_create',
-			'active'    => ['admin.sync_links.edit' ]
-		],
+	 //    [
+	 //    	'type' 		=> 'single',
+		// 	'name' 		=> 'Trang đơn',
+		// 	'icon' 		=> 'bx bx-file',
+		// 	'route' 	=> 'admin.pages.index',
+		// 	'role'		=> 'pages_index',
+		// 	'active'    => [ 'admin.pages.create', 'admin.pages.edit' ]
+		// ],
+		// [
+	 //    	'type' 		=> 'single',
+		// 	'name' 		=> 'Link đồng bộ',
+		// 	'icon' 		=> 'bx bx-link-alt',
+		// 	'route' 	=> 'admin.sync_links.create',
+		// 	'role'		=> 'sync_links_create',
+		// 	'active'    => ['admin.sync_links.edit' ]
+		// ],
 		[
 	    	'type' 		=> 'single',
 			'name' 		=> 'Quản lý slides',
@@ -112,14 +112,14 @@ return [
 			'role'		=> 'slides_index',
 			'active'    => [ 'admin.slides.create', 'admin.slides.edit' ]
 		],
-		[
-	    	'type' 		=> 'single',
-			'name' 		=> 'Bình luận',
-			'icon' 		=> 'bx bx-comment',
-			'route' 	=> 'admin.comments.index',
-			'role'		=> 'comments_index',
-			'active'    => [ 'admin.comments.create', 'admin.comments.edit' ]
-		],
+		// [
+	 //    	'type' 		=> 'single',
+		// 	'name' 		=> 'Bình luận',
+		// 	'icon' 		=> 'bx bx-comment',
+		// 	'route' 	=> 'admin.comments.index',
+		// 	'role'		=> 'comments_index',
+		// 	'active'    => [ 'admin.comments.create', 'admin.comments.edit' ]
+		// ],
 		[
 	    	'type' 		=> 'single',
 			'name' 		=> 'Liên hệ',
@@ -128,21 +128,21 @@ return [
 			'role'		=> 'contacts_index',
 			'active'    => [ 'admin.contacts.create', 'admin.contacts.edit' ]
 		],
-		[
-	    	'type' 		=> 'single',
-			'name' 		=> 'Đăng ký Email',
-			'icon' 		=> 'bx bx-envelope',
-			'route' 	=> 'admin.email_registers.index',
-			'role'		=> 'email_registers_index'
-		],
-		[
-	    	'type' 		=> 'single',
-	    	'name' 		=> 'Gọi lại cho tôi',
-			'icon' 		=> 'bx bx-phone-call',
-			'route' 	=> 'admin.call_me_backs.index',
-			'role'		=> 'call_me_backs_index',
-			'active' 	=> [ 'admin.call_me_backs.show', 'admin.call_me_backs.edit' ]
-	    ],
+		// [
+	 //    	'type' 		=> 'single',
+		// 	'name' 		=> 'Đăng ký Email',
+		// 	'icon' 		=> 'bx bx-envelope',
+		// 	'route' 	=> 'admin.email_registers.index',
+		// 	'role'		=> 'email_registers_index'
+		// ],
+		// [
+	 //    	'type' 		=> 'single',
+	 //    	'name' 		=> 'Gọi lại cho tôi',
+		// 	'icon' 		=> 'bx bx-phone-call',
+		// 	'route' 	=> 'admin.call_me_backs.index',
+		// 	'role'		=> 'call_me_backs_index',
+		// 	'active' 	=> [ 'admin.call_me_backs.show', 'admin.call_me_backs.edit' ]
+	 //    ],
 		[
 	    	'type' 				=> 'multiple',
 	        'name' 				=> 'Tài khoản quản trị',
@@ -246,14 +246,14 @@ return [
 			'route' 	=> 'media.view',
 			'role'		=> 'media_index'
 		],
-		[
-			'type' 		=> 'single',
-			'name' 		=> 'Lịch sử hệ thống',
-			'icon' 		=> 'bx bx-log-in-circle',
-			'route' 	=> 'admin.system_logs.index',
-			'role'		=> 'system_logs_index',
-			'active' 	=> [ 'admin.system_logs.show' ]
-		],
+		// [
+		// 	'type' 		=> 'single',
+		// 	'name' 		=> 'Lịch sử hệ thống',
+		// 	'icon' 		=> 'bx bx-log-in-circle',
+		// 	'route' 	=> 'admin.system_logs.index',
+		// 	'role'		=> 'system_logs_index',
+		// 	'active' 	=> [ 'admin.system_logs.show' ]
+		// ],
 		[
 	    	'type' 				=> 'multiple',
 	        'name' 				=> 'Icons',

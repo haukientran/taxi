@@ -64,7 +64,7 @@
     <section id="table_price" class="w-100 mt-20">
         <div class="container">
             <div class="table_price col-gird-6 w-100">
-                <div class="table_price-left css-content">
+                <div class="table_price-left css-content text-center">
                     <?php echo ($setting_home['table_price'] ?? ''); ?>
 
                     <a href="tel:<?php echo e($config_general['hotline_support'] ?? ''); ?>" class="btn btn-primary btn-book color_white mt-10 lh-40 text-up fs-16 f-w-b" aria-label="Đặt xe" title="Đặt xe">Đặt xe: <?php echo e($config_general['hotline_support'] ?? ''); ?></a>
