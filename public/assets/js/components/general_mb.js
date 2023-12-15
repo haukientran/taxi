@@ -25,8 +25,8 @@ $(document).ready(function() {
     }
     var height_header = $('.header').outerHeight();
     $('.header').css('top',height_adminbar);
-    console.log(height_header)
     $('main').css('margin-top',height_header+height_adminbar);
+    $('main').css('margin-top', 105);
     $(window).scroll(function(){
         if($(this).scrollTop() > 0) {
             if($('.header').hasClass('home')){
