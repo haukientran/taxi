@@ -29,6 +29,7 @@ class SettingController extends AdminController
         // Khởi tạo form
         $form = new Form;
         $form->card('col-lg-12');
+            $form->color('color_main', $data['color_main'] ?? '', 0, 'Màu chính','', true);
             $form->image('logo_header_desktop', $data['logo_header_desktop']??'', 0, 'Logo hiển thị header desktop', 'Chọn ảnh','', true);
             $form->image('logo_header_mobile', $data['logo_header_mobile']??'', 0, 'Logo hiển thị header mobile', 'Chọn ảnh', '', true);
             $form->image('logo_footer_desktop', $data['logo_footer_desktop']??'', 0, 'Logo hiển thị footer desktop', 'Chọn ảnh', '', true);

@@ -1591,7 +1591,7 @@ input {
 }
 
 .btn-primary {
-  background-color: #00a551;
+  background-color: var(--color-main, #fff);
   color: #fff;
 }
 
@@ -1651,7 +1651,7 @@ input {
 }
 .header-top {
   height: 40px;
-  background-color: #00a551;
+  background-color: var(--color-main, #fff);
   padding: 0 20px;
 }
 .header-top .address {
@@ -1716,7 +1716,7 @@ input {
   margin-right: 0;
 }
 .header-menu .menu-item:hover .menu-item__link {
-  color: #00a551;
+  color: var(--color-main, #fff);
 }
 .header-menu .menu-item:hover .menu-item__link:before {
   visibility: visible;
@@ -1780,13 +1780,13 @@ input {
   width: 100%;
 }
 .header-menu .submenu-item__link:hover {
-  color: #00a551;
+  color: var(--color-main, #fff);
 }
 .header-menu .submenu-item__child {
   padding-top: 4px;
 }
 .header-menu .submenu-item__child li {
-  border-top: 1px dotted #00a551;
+  border-top: 1px dotted var(--color-main, #fff);
 }
 .header-menu .submenu-item__child li a {
   padding: 4px 0;
@@ -1800,7 +1800,7 @@ input {
   font-size: 14px;
 }
 .header-menu .submenu-item__child li a:hover {
-  color: #00a551;
+  color: var(--color-main, #fff);
 }
 .header-search {
   max-width: 268px;
@@ -1850,7 +1850,7 @@ input {
   width: 20px;
 }
 .header-search .search-btn svg {
-  fill: #00a551;
+  fill: var(--color-main, #fff);
   width: 100%;
   height: 100%;
 }
@@ -1964,7 +1964,7 @@ main {
   position: relative;
   text-align: center;
   width: 100%;
-  color: #00a551;
+  color: var(--color-main, #fff);
   margin-bottom: 30px;
 }
 
@@ -1978,7 +1978,7 @@ main {
   text-transform: uppercase;
   font-size: 24px;
   line-height: 20px;
-  color: #00a551;
+  color: var(--color-main, #fff);
 }
 #blog .blog-list {
   gap: 28px 50px;
@@ -2377,7 +2377,7 @@ main {
 }
 
 footer {
-  background-color: #00a551;
+  background-color: var(--color-main, #fff);
   padding-top: 50px;
   color: #fff;
 }

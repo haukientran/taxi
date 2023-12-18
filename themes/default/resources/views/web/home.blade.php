@@ -4,8 +4,10 @@
         @php
             /*echo file_get_contents(asset("./assets/build/css/home.min.css?v=".config('SudoAsset.vesion')));*/
             /*echo file_get_contents(asset("/admin_assets/libs/fancybox/jquery.fancybox.min.css"));*/
-
         @endphp
+        :root {
+            --color-main: {{ $config_general['color_main'] ?? '#ffffff' }};
+        }
     </style>
     <link rel="stylesheet" type="text/css" href="{{ asset("/assets/build/css/home.min.css?v=".config('SudoAsset.vesion')) }}">
     <link rel="stylesheet" type="text/css" href="{{ asset("/admin_assets/libs/fancybox/jquery.fancybox.min.css") }}">

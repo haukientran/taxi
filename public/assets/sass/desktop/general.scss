@@ -5,6 +5,8 @@
 @import '../components/toast.scss';
 @import '../components/paginate.scss';
 @import '../components/slide.scss';
+$color_main: var(--color-main, #fff);
+
 * {
     box-sizing: border-box;
 }

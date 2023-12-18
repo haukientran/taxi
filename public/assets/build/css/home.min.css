@@ -51,7 +51,7 @@
   position: relative;
   text-align: center;
   width: 100%;
-  color: #00a551;
+  color: var(--color-main, #fff);
   margin-bottom: 30px;
 }
 
@@ -72,7 +72,7 @@
   max-width: 330px;
   height: 4px;
   content: "";
-  background-color: #00a551;
+  background-color: var(--color-main, #fff);
   position: absolute;
   left: 0;
   bottom: -15px;
@@ -159,14 +159,14 @@
   margin-top: 18px;
   padding: 0;
   line-height: 52px;
-  background-color: #00a551;
+  background-color: var(--color-main, #fff);
 }
 #nation .nation-see-more {
   display: block;
   margin-top: 45px;
   margin-bottom: 25px;
   text-align: center;
-  color: #00a551;
+  color: var(--color-main, #fff);
   text-decoration: none;
   font-size: 20px;
   font-weight: 700;
@@ -177,14 +177,14 @@
   margin-top: 45px;
   margin-bottom: 25px;
   text-align: center;
-  color: #00a551;
+  color: var(--color-main, #fff);
   text-decoration: none;
   font-size: 20px;
   font-weight: 700;
 }
 
 #contidion {
-  background-color: #00a551;
+  background-color: var(--color-main, #fff);
   width: 100%;
   padding: 74px 0px;
   color: #fff;
@@ -225,7 +225,7 @@
 }
 #contidion .contidion-item .contidion-btn {
   width: 150px;
-  color: #00a551;
+  color: var(--color-main, #fff);
   margin-top: 10px;
   background-color: #fff;
   padding: 10px 20px;

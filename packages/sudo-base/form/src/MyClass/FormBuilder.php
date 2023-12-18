@@ -890,6 +890,39 @@ class FormBuilder {
         ];
     }
 
+
+    /**
+     * @param string    $name: tên
+     * @param string    $value: giá trị
+     * @param number    $required: bắt buộc (0 Không | 1 có)
+     * @param string    $label: Tiêu đề hiển thị
+     * @param string    $placeholder: Gợi ý nhập
+     * @param string    $has_row: label và thẻ input có nằm 1 hàng không (false không | true có)
+     * @param string    $class_col: class để chia cột (col-lg-6 chia 2 cột | col-lg-4 chia 3 cột | col-lg-3 chia 4 cột)
+     */
+    function color(
+        $name               = '',
+        $value              = '',
+        $required           = 0,
+        $label              = 'Tiêu đề',
+        $placeholder        = null,
+        $has_row            = false,
+        $class_col          = '',
+        $disable            = false
+    ) {
+        $this->data_form[] = [
+            'form_type'     => 'color',
+            'name'          => $name,
+            'value'         => $value,
+            'required'      => $required,
+            'label'         => $label,
+            'placeholder'   => $placeholder,
+            'has_row'       => $has_row,
+            'class_col'     => $class_col,
+            'disable'       => $disable,
+        ];
+    }
+
     /**
 	 * @param string 	$template: view template
 	 * @param array 	$param: giá trị chấp nhận của view template

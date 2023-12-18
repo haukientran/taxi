@@ -112,6 +112,19 @@
 	        ])
         @break
 
+	    @case('color')
+	        @include('Form::base.input_color', [
+	        	'name'				=> $item['name'],
+				'value' 			=> $item['value'],
+				'required' 			=> $item['required'],
+				'label' 			=> $item['label'],
+				'placeholder' 		=> $item['placeholder'],
+				'has_row' 			=> $item['has_row'],
+				'class_col' 		=> $item['class_col'],
+				'disable' 			=> $item['disable'],
+	        ])
+        @break
+
         @case('number')
 	        @include('Form::base.number', [
 	        	'name'				=> $item['name'],
