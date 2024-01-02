@@ -225,6 +225,11 @@ class SettingController extends AdminController
         $form->endCard();
 
         $form->card('col-lg-12');
+            $form->title('Cấu hình Hiển thị form đăng ký');
+            $form->checkbox('enabled_form', $data['enabled_form'] ?? '', 1, 'Hiển thị form đăng ký');
+        $form->endCard();
+
+        $form->card('col-lg-12');
             $form->title('Cấu hình vì sao nên chọn chúng tôi(2 cột/1 dòng)');
             $form->text('should_choose_grid2_title', $data['should_choose_grid2_title'] ?? '', 0, 'Tiêu đề hiển thị','', true);
             $form->custom('Form::custom.form_custom', [

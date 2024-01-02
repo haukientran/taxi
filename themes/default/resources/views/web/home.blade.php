@@ -60,8 +60,9 @@
         </div>
     </section>
     @include('Default::web.layouts.should-choose_home')
-    @include('Default::web.layouts.register', ['title' => isset($setting_home['register_title']) ? $setting_home['register_title'] : 'ĐĂNG KÝ DỊCH VỤ'])
-
+    @if(isset($setting_home['enabled_form']) && $setting_home['enabled_form'])
+        @include('Default::web.layouts.register', ['title' => isset($setting_home['register_title']) ? $setting_home['register_title'] : 'ĐĂNG KÝ DỊCH VỤ'])
+    @endif
 
 
     <section id="table_price" class="w-100 mt-20">

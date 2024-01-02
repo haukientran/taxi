@@ -31,7 +31,9 @@
         </div>
     </section>
     @include('Default::mobile.layouts.should-choose_home')
-    @include('Default::mobile.layouts.register', ['title' => isset($setting_home['register_title']) ? $setting_home['register_title'] : 'ĐĂNG KÝ TƯ VẤN MIỄN PHÍ'])
+    @if(isset($setting_home['enabled_form']) && $setting_home['enabled_form'])
+        @include('Default::mobile.layouts.register', ['title' => isset($setting_home['register_title']) ? $setting_home['register_title'] : 'ĐĂNG KÝ TƯ VẤN MIỄN PHÍ'])
+    @endif
      <section id="table_price" class="w-100 mt-20">
         <div class="container">
             <div class="table_price col-gird-12 w-100">
