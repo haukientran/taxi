@@ -16,6 +16,9 @@
                     </div>
                     <div class="contidion-item__content f-w-b fs-16">{{ $service_grid3 ?? '' }}</div>
                     <div class="contidion-item__description mt-10">{{ $setting_home['service_grid3']['description'][$k] ?? '' }}</div>
+                    @if(isset($setting_home['service_grid3']['link'][$k]))
+                    <a href="{{ $setting_home['service_grid3']['link'][$k] ?? '' }}" class="btn btn-primary w-100 post-item__see contidion-item__see" aria-label="Gọi ngay" title="Gọi ngay">Gọi ngay</a>
+                    @endif
                 </div>
                 @endforeach
             </div>
