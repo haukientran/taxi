@@ -101,6 +101,10 @@
 																	<input class="table-form__control" type="text" name="{{ $name ?? '' }}[{{ $child_item['name'] ?? '' }}][]" placeholder="@lang($child_item['placeholder'] ?? '')" value="{{ $value[$child_item['name'] ?? ''][$j] ?? '' }}">
 																@break
 
+																@case('number')
+																	<input class="table-form__control" type="number" name="{{ $name ?? '' }}[{{ $child_item['name'] ?? '' }}][]" placeholder="@lang($child_item['placeholder'] ?? '')" value="{{ $value[$child_item['name'] ?? ''][$j] ?? '' }}">
+																@break
+
 																@case('textarea')
 																	<textarea class="table-form__control" name="{{ $name ?? '' }}[{{ $child_item['name'] ?? '' }}][]" placeholder="@lang($child_item['placeholder'] ?? '')">{{ $value[$child_item['name'] ?? ''][$j] ?? '' }}</textarea>
 														        @break
@@ -210,8 +214,13 @@ $(document).ready(function() {
 													</div>
 										        @break
 
+
 												@case('text')
 													<input class="table-form__control" type="text" name="{{ $name ?? '' }}[{{ $child_item['name'] ?? '' }}][]" placeholder="@lang($child_item['placeholder'] ?? '')" value="">
+												@break
+
+												@case('number')
+													<input class="table-form__control" type="number" name="{{ $name ?? '' }}[{{ $child_item['name'] ?? '' }}][]" placeholder="@lang($child_item['placeholder'] ?? '')" value="">
 												@break
 
 												@case('textarea')

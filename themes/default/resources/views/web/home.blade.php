@@ -155,11 +155,13 @@
     </section>
     @endif
     @include('Default::web.layouts.service_grid3')
+    @include('Default::web.layouts.service_grid4')
     @include('Default::web.layouts.evaluate')
     @include('Default::web.layouts.feedback_home', ['title' => isset($setting_home['feedback_title']) ? $setting_home['feedback_title'] : 'Chia sẻ từ học viên Lê Ánh'])
     @include('Default::web.layouts.list_image_home',['title'=> isset($setting_home['activity_title']) ? $setting_home['activity_title'] : 'Hoạt động tại Lê ánh' ])
     @include('Default::web.layouts.blog',['posts'=>$posts, 'title'=> isset($setting_home['news_title']) ? $setting_home['news_title'] : 'Tin tức sự kiện'])
     
+    @include('Default::web.layouts.should-choose-grid2-star')
     @if(isset($setting_home['partner']['image']) && count($setting_home['partner']['image']) > 0)
     <section id="partner">
         <div class="container">

@@ -248,6 +248,26 @@ class SettingController extends AdminController
             ]);
         $form->endCard();
         $form->card('col-lg-12');
+            $form->title('Cấu hình vì sao nên chọn chúng tôi(có đánh giá sao)');
+            $form->text('should_choose_grid2_star_title', $data['should_choose_grid2_star_title'] ?? '', 0, 'Tiêu đề hiển thị','', true);
+            $form->custom('Form::custom.form_custom', [
+                'has_full' => false,
+                'name' => 'should_choose_grid2_star',
+                'value' => $data['should_choose_grid2_star'] ?? [],
+                'label' => 'Danh sách cấu hình',
+                'generate' => [
+                    [ 'type' => 'image', 'name' => 'image', 'size' => 'Chọn ảnh có kích thước '.'50x50', ],
+                    [ 'type' => 'custom', 'generate' => [
+                            [ 'type' => 'number', 'name' => 'rank', 'placeholder' => 'Số sao đánh giá', ],
+                            [ 'type' => 'text', 'name' => 'title', 'placeholder' => 'Tiêu đề', ],
+                            [ 'type' => 'text', 'name' => 'description', 'placeholder' => 'Mô tả', ],
+                        ]
+                    ],
+                ],
+            ]);
+        $form->endCard();
+        
+        $form->card('col-lg-12');
             $form->title('Cấu hình dịch vụ chuyến xe');
             $form->text('service_contact', $data['service_contact'] ?? '', 0, 'Tiêu đề hiển thị','', true);
         $form->endCard();
@@ -308,6 +328,26 @@ class SettingController extends AdminController
                 'has_full' => false,
                 'name' => 'service_grid3',
                 'value' => $data['service_grid3'] ?? [],
+                'label' => 'Danh sách cấu hình',
+                'generate' => [
+                    [ 'type' => 'image', 'name' => 'image', 'size' => 'Chọn ảnh có kích thước '.'300x300', ],
+                    [ 'type' => 'text', 'name' => 'link', 'placeholder' => 'Thêm link ', ],
+                    [ 'type' => 'custom', 'generate' => [
+                            [ 'type' => 'text', 'name' => 'title', 'placeholder' => 'Tiêu đề', ],
+                            [ 'type' => 'text', 'name' => 'description', 'placeholder' => 'Nhập mô tả'],
+                        ]
+                    ],
+                ],
+            ]);
+        $form->endCard();
+        
+        $form->card('col-lg-12');
+            $form->title('Cấu hình dịch vụ(grid4)');
+            $form->text('service_grid4_title', $data['service_grid4_title'] ?? '', 0, 'Tiêu đề hiển thị','', true);
+            $form->custom('Form::custom.form_custom', [
+                'has_full' => false,
+                'name' => 'service_grid4',
+                'value' => $data['service_grid4'] ?? [],
                 'label' => 'Danh sách cấu hình',
                 'generate' => [
                     [ 'type' => 'image', 'name' => 'image', 'size' => 'Chọn ảnh có kích thước '.'300x300', ],
