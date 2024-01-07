@@ -2,7 +2,7 @@
     <section id="contidion" class="service_grid4">
         <div class="container">
             <h2 class="section-title contidion-title">{{ isset($setting_home['service_grid4_title']) ? $setting_home['service_grid4_title'] : 'Dịch vụ của chúng tôi' }}</h2>
-            <div class="contidion-list w-100">
+            <div class="contidion-list w-100 flex">
                 @foreach($setting_home['service_grid4']['title'] as $k => $service_grid4)
                 <div class="contidion-item">
                     <div class="contidion-item__thumbnail">
