@@ -225,9 +225,13 @@ $color_main: var(--color-main, #fff);
     background-color: unset!important;
     color: $color_text!important;
 }
-#service_grid4 {
+.service_grid4 {
     .contidion-list {
-        grid-template-columns: repeat(4,1fr);
+        grid-template-columns: repeat(4,1fr)!important;
+    }
+    .contidion-item__thumbnail {
+        width: 260px!important;
+        height: 260px!important;
     }
 }
 .pagination {
