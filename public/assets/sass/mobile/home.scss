@@ -1,5 +1,6 @@
 @import '../components/mixin.scss';
 @import './layouts/should_choose.scss';
+$color_main: var(--color-main, #fff);
 
 .header-top {
     height: 30px;

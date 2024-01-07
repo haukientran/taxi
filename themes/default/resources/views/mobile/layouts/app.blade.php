@@ -19,6 +19,9 @@
            /*echo file_get_contents(asset('./assets/font/Averta/averta.min.css?v='.config('SudoAsset.vesion')));*/
            /*echo file_get_contents(asset('/assets/build/css/general_mb.min.css?v='.config('SudoAsset.vesion')));*/
        @endphp
+       :root {
+            --color-main: {{ $config_general['color_main'] ?? '#ffffff' }};
+        }
    </style>
     <link rel="stylesheet" type="text/css" href="{{ asset('/assets/build/css/general_mb.min.css?v='.config('SudoAsset.vesion')) }}">
     

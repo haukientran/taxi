@@ -1590,7 +1590,7 @@ input {
 }
 
 .btn-primary {
-  background-color: #00a551;
+  background-color: var(--color-main, #fff);
   color: #fff;
 }
 
@@ -1727,7 +1727,7 @@ input {
   overflow-y: scroll;
   height: calc(90vh - 25px);
   max-height: calc(90vh - 25px);
-  background: #00a551;
+  background: var(--color-main, #fff);
   display: none;
   transform: translateY(-100%);
   transition: transform 0.3s ease-in-out;
@@ -1836,7 +1836,7 @@ main {
   display: block;
   position: relative;
   width: 100%;
-  color: #00a551;
+  color: var(--color-main, #fff);
   line-height: 30px;
 }
 
@@ -1847,7 +1847,7 @@ main {
   margin-bottom: 30px;
   text-transform: uppercase;
   font-size: 20px;
-  color: #00a551;
+  color: var(--color-main, #fff);
 }
 
 .blog-item {
@@ -1885,7 +1885,7 @@ main {
   width: 58px;
   height: 2px;
   content: "";
-  background-color: #00a551;
+  background-color: var(--color-main, #fff);
   position: absolute;
   right: -68px;
   top: 50%;
@@ -2050,7 +2050,7 @@ main {
   width: 40px;
   height: 3px;
   content: "";
-  background-color: #00a551;
+  background-color: var(--color-main, #fff);
   position: absolute;
   left: 0;
   bottom: -16px;
@@ -2169,7 +2169,7 @@ main {
 }
 
 footer {
-  background-color: #00a551;
+  background-color: var(--color-main, #fff);
   padding: 40px 0;
 }
 footer .footer-item {
@@ -2431,7 +2431,7 @@ footer .footer-taskbar #call li a {
 }
 
 .btn-primary {
-  background-color: #00a551;
+  background-color: var(--color-main, #fff);
   color: #fff;
 }
 
@@ -2547,7 +2547,7 @@ footer .footer-taskbar #call li a {
   text-transform: uppercase;
   font-size: 24px;
   line-height: 20px;
-  color: #00a551;
+  color: var(--color-main, #fff);
 }
 #blog .blog-list {
   gap: 28px 50px;
@@ -2584,7 +2584,7 @@ footer .footer-taskbar #call li a {
   width: 58px;
   height: 2px;
   content: "";
-  background-color: #00a551;
+  background-color: var(--color-main, #fff);
   position: absolute;
   right: -68px;
   top: 50%;

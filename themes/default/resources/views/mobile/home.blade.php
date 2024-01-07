@@ -124,9 +124,11 @@
     </section>
     @endif
     @include('Default::mobile.layouts.service_grid3')
+    @include('Default::mobile.layouts.service_grid4')
     @include('Default::mobile.layouts.feedback_home', ['title' => isset($setting_home['feedback_title']) ? $setting_home['feedback_title'] : 'Chia sẻ từ học viên Lê Ánh'])
     @include('Default::mobile.layouts.list_image_home',['title'=> isset($setting_home['activity_title']) ? $setting_home['activity_title'] : 'Hoạt động tại Lê ánh' ])
     @include('Default::mobile.layouts.evaluate')
+    @include('Default::mobile.layouts.should-choose-grid2-star')
     @include('Default::mobile.layouts.blog',['posts'=>$posts, 'title'=> isset($setting_home['news_title']) ? $setting_home['news_title'] : 'Tin tức nổi bật'])
 
     @if(isset($setting_home['partner']['image']) && count($setting_home['partner']['image']) > 0)
