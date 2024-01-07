@@ -2263,6 +2263,9 @@ main {
   font-size: 14px;
   line-height: 20px;
 }
+.should-choose-item__content {
+  padding: 0 25px;
+}
 
 .should_choose_grid2 {
   background-color: red;
