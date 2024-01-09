@@ -19,6 +19,7 @@
 <main id="main">
     <input type="hidden" name="current_url" value="/" class="current_url">
     @include('Default::mobile.layouts.banner')
+    @if(isset($setting_home['reason_title']))
     <section id="reason">
         <div class="container">
            <div class="reason-box">
@@ -30,6 +31,7 @@
             </div>
         </div>
     </section>
+    @endif
     @include('Default::mobile.layouts.should-choose_home')
     @if(isset($setting_home['enabled_form']) && $setting_home['enabled_form'])
         @include('Default::mobile.layouts.register', ['title' => isset($setting_home['register_title']) ? $setting_home['register_title'] : 'ĐĂNG KÝ TƯ VẤN MIỄN PHÍ'])

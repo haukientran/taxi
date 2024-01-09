@@ -35,6 +35,7 @@
 <main id="main">
     <input type="hidden" name="current_url" value="/" class="current_url">
     @include('Default::web.layouts.banner')
+    @if(isset($setting_home['reason_title']))
     <section id="reason">
         <div class="container">
                     <h1 class="section-title reason-title">{{ isset($setting_home['reason_title']) ? $setting_home['reason_title'] : '' }}</h1>
@@ -59,6 +60,7 @@
             </div>
         </div>
     </section>
+    @endif
     @include('Default::web.layouts.should-choose_home')
     @if(isset($setting_home['enabled_form']) && $setting_home['enabled_form'])
         @include('Default::web.layouts.register', ['title' => isset($setting_home['register_title']) ? $setting_home['register_title'] : 'ĐĂNG KÝ DỊCH VỤ'])
